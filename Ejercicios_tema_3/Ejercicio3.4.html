@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 4 - Tema 3</title>
+  </head>
+  <body>
+    <!--Modificar los ejercicios del tema 2 donde tenemos la opción de obtener
+    decimales, para que el resultado venga siempre con dos decimales.-->
+
+    <script>
+      let num1 = 285.966568;
+      let num2 = 25.5855;
+
+      let resultado;
+
+      if (num2 === 0) {
+        alert("Error no se puede dividir por cero");
+      } else {
+        let resultado = num1 / num2;
+        //alert("El resulatdo de la division es= "+resultado);
+      }
+
+      alert(
+        "la suma es= " +
+          (num1 + num2).toFixed(2) +
+          "\nLa resta es= " +
+          (num1 - num2).toFixed(2) +
+          "\nLa Multiplicación es= " +
+          (num1 * num2).toFixed(2) +
+          "\nEl cociente es= " +
+          (num1 / num2).toFixed(2) ||
+          resultado.toFixed(2) ||
+          "No se puede dividir por cero"
+      );
+    </script>
+  </body>
+</html>

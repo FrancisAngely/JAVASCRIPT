@@ -5,10 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
     <!-- En Formación profesional los valores de las notas deben ser enteros, realizar un
 programa donde la nota final dependerá si el primer decimal es mayor o igual
 que 5 en cuyo caso se obtendrá la nota siguiente, y donde nos muestre el valor
 numérico sin tener en cuenta los decimales -->
+
+    <script>
+      let valor = parseFloat(
+        prompt("Indica la nota obtenida en el examen final con decimales: ")
+      );
+      let valoredondeado;
+
+      if (valor % 1 >= 0.5) {
+        valoredondeado = Math.ceil(valor);
+      } else {
+        valoredondeado = Math.floor(valor);
+      }
+      alert("La nota redondeada es: " + valoredondeado);
+    </script>
   </body>
 </html>

@@ -5,34 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 4 - Tema 3</title>
   </head>
+
   <body>
     <!--Modificar los ejercicios del tema 2 donde tenemos la opción de obtener
     decimales, para que el resultado venga siempre con dos decimales.-->
 
     <script>
-      let num1 = 285.966568;
-      let num2 = 25.5855;
+      let num1 = parseFloat(prompt("Teclea el primer dato numérico: "));
+      let num2 = parseFloat(prompt("Teclea el segundo dato numérico: "));
 
-      let resultado;
+      let suma = (num1 + num2).toFixed(2);
+      let resta = (num1 - num2).toFixed(2);
+      let multiplicacion = (num1 * num2).toFixed(2);
+      let cociente;
 
       if (num2 === 0) {
-        alert("Error no se puede dividir por cero");
+        cociente = "No se puede dividir por cero";
       } else {
-        let resultado = num1 / num2;
-        //alert("El resulatdo de la division es= "+resultado);
+        cociente = (num1 / num2).toFixed(2);
       }
-
       alert(
-        "la suma es= " +
-          (num1 + num2).toFixed(2) +
-          "\nLa resta es= " +
-          (num1 - num2).toFixed(2) +
-          "\nLa Multiplicación es= " +
-          (num1 * num2).toFixed(2) +
-          "\nEl cociente es= " +
-          (num1 / num2).toFixed(2) ||
-          resultado.toFixed(2) ||
-          "No se puede dividir por cero"
+        "Resultados:\n" +
+          "La suma es= " +
+          suma +
+          "\n" +
+          "La resta es= " +
+          resta +
+          "\n" +
+          "La Multiplicación es= " +
+          multiplicacion +
+          "\n" +
+          "El cociente es= " +
+          cociente
       );
     </script>
   </body>

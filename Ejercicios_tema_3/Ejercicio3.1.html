@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1 - Tema 3 </title>
-</head>
- <!-- En el tema explicamos cómo funciona la función indexOf cuando pasamos un
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1 - Tema 3</title>
+  </head>
+  <!-- En el tema explicamos cómo funciona la función indexOf cuando pasamos un
 único parámetro, busca en Internet otros parámetros que podemos utilizar en
 esta función, y crea un ejercicio donde se muestre por pantalla el número de “a”,
 sean positivos o negativos que nos encontramos en una cadena que pasamos
 por teclado.-->
-<body>
-    <script>
-let despedida="Adios un gusto haberte visto";
 
-alert(despedida.indexOf("A"));  
+  <body>
+    <script>
+      let despedida = prompt("Ingresa una frase: ");
+      let contador = 0;
+
+      for (let i = 0; i < despedida.length; i++) {
+        if (despedida[i].toLocaleLowerCase() === "a") {
+          contador++;
+        }
+      }
+      alert('La letra "a" sale en esta frase ' + contador + " veces");
     </script>
-    
-</body>
+  </body>
 </html>

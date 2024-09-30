@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio 1 - Tema 3</title>
-  </head>
-  <!-- En el tema explicamos cómo funciona la función indexOf cuando pasamos un
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 1 - Tema 3</title>
+</head>
+<!-- En el tema explicamos cómo funciona la función indexOf cuando pasamos un
 único parámetro, busca en Internet otros parámetros que podemos utilizar en
 esta función, y crea un ejercicio donde se muestre por pantalla el número de “a”,
 sean positivos o negativos que nos encontramos en una cadena que pasamos
 por teclado.-->
 
-  <body>
-    <script>
-      let despedida = prompt("Ingresa una frase: ");
-      let contador = 0;
+<body>
+  <script>
+    let despedida = prompt("Ingresa una frase: ");
+    let contador = 0;
 
-      for (let i = 0; i < despedida.length; i++) {
-        if (despedida[i].toLocaleLowerCase() === "a") {
-          contador++;
-        }
+    for (let i = 0; i < despedida.length; i++) {
+      if (despedida[i].toLocaleLowerCase() === "a") {
+        contador++;
       }
-      alert('La letra "a" sale en esta frase ' + contador + " veces");
-    </script>
-  </body>
+      /*if (despedida[i].indexOf("a") !== -1) {
+        contador++;
+      }*/
+    }
+    alert(
+      'La letra "a" sale en esta frase \n' +
+      despedida +
+      " \n" +
+      contador +
+      " veces"
+    );
+
+    /*
+    let letra = 'a';
+    let contador = 0;
+    let posicion = cadena.indexOf(letra);
+
+    while(posicion !== -1) {
+      contador ++;
+      posicion = cadena.indexOf(letra, posicion +1);
+    }
+
+    console.log(`La letra 'a' aparece ${contador} veces en total (posiciones positivas).`);
+    */
+
+  </script>
+</body>
+
 </html>

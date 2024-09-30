@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Tema 4</title>
+</head>
+
+<body>
+    <!-- 
+    Escribir el código de una función a la que se le pasa como parámetro un número
+    entero y devuelve como resultado si el número es par o impar. Mostrar por
+    pantalla el resultado de la función.
+    -->
+
+    <script>
+        function paroimpar() {
+
+            let numero = prompt("Introduce un dato numerico: ");
+
+            if (numero ¡== 1) {
+                console.log("El numero " + numero + " es impar");
+            } else {
+                console.log("El numero " + numero + " es par");
+                return paroimpar();
+            }
+
+        }
+        paroimpar();
+
+    </script>
+
+</body>
+
+</html>

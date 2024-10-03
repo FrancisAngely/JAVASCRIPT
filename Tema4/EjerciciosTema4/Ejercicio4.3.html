@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 3 - Tema 4</title>
 </head>
+
 <body>
-    
+    <!--
+Escribir el código de una función a la que se le pasen dos valores y una operación,
+y devuelva la operación realizada sobre los dos valores (si se produce una
+división, se indicará que la división no tiene sentido).
+-->
+
+    <script>
+        function operaciones() {
+
+            let num1 = parseFloat(prompt("Ingresa un valor: "));
+            let num2 = parseFloat(prompt("Ingresa un valor: "));
+            let op = prompt("Que operacion quieres realizar (+,-,*,/): ");
+
+            return op === '/' ? num2 === 0 ? "La division no tiene sentido " : num1 / num2
+                : op === '+' ? num1 + num2
+                    : op === '-' ? num1 - num2
+                        : op === '*' ? num1 * num2
+                            : "Operacion no valida ";
+        }
+
+        let result = operaciones();
+        alert("El resultado es: " + result); 
+    </script>
+
 </body>
+
 </html>

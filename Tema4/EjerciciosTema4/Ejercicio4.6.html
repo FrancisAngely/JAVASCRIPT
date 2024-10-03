@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 6 - Tema 4</title>
-</head>
-<body>
-    
-</body>
+  </head>
+
+  <body>
+    <!--
+Crea una función que reciba un texto y lo devuelva al revés.
+-->
+
+    <script>
+      function textoinvertido() {
+        let dato = prompt("Ingresa un texto:");
+        return dato.split("").reverse().join("");
+      }
+
+      alert("el texto invertido es: " + textoinvertido());
+    </script>
+  </body>
 </html>

@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 5 - Tema 4</title>
 </head>
+
 <body>
-    
+    <!--
+    Crea una función que reciba dos parámetros: 
+    precio e iva, y devuelva el precio con iva incluido. 
+    Si no recibe el iva, aplicará el 21% por defecto.
+   -->
+    <script>
+        function compra(precio, iva) {
+            
+            if (isNaN(iva)) {
+                iva = 21;
+            }
+            let precioTotal = precio * (1 + iva / 100);
+            return precioTotal; 
+        }
+
+        let precio = parseFloat(prompt("Ingresa un valor "));
+
+        let iva = parseFloat(prompt("Ingresa el iva a calcular: "));
+
+        let result = compra(precio, iva);
+
+        alert(" El precio con el iva es " + result.toFixed(2));
+    </script>
+
 </body>
+
 </html>

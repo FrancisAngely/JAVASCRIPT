@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 7 - Tema 4</title>
 </head>
+
 <body>
-    
+    <!--
+    Crea una función que genere un número aleatorio entre min y max, que serán
+    pasados como argumento. Si no se le pasan parámetros por defecto 
+    min = 1 y max = 100.    
+    -->
+    <script>
+        function numerosAleatorios(min, max) {
+            if (isNaN(min) || isNaN(max)) {
+                min = 1;
+                max = 100;
+                console.log(min);
+                console.log(max);
+            }
+            let numerosRam = Math.random() * (max - min) + min;
+            return numerosRam;
+
+        }
+
+        let min = parseFloat(prompt("Ingresa un valor min 1: "));
+        let max = parseFloat(prompt("Ingresa un valor max 100: "));
+
+        let result = numerosAleatorios(min, max);
+
+        alert("Los numeros aleatorios es:  " + result.toFixed(0));
+
+    </script>
 </body>
+
 </html>

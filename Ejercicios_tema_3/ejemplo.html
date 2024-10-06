@@ -3,28 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio 8 - Tema 4</title>
+    <title>Document</title>
   </head>
   <body>
-    <!--
-    Crea un función que genere 100 números aleatorios entre 1 y 1000 
-    que no se repitan y luego muéstralos por pantalla
-    -->
-
     <script>
       function numerosAleatorios() {
         let min = 1;
         let max = 1000;
         let num = null;
+        let salida = "";
 
         for (let i = 0; i < 100; i++) {
           let valor = Math.floor(Math.random() * (max - min) + min);
           while (valor === num) {
             valor = Math.floor(Math.random() * (max - min) + min);
           }
-          console.log(valor);
+          salida += valor + "<br>";
           num = valor;
         }
+        document.body.innerHTML = salida;
       }
       numerosAleatorios();
     </script>

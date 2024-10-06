@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 10 - Tema 4</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <!--
+    Crear un programa donde el usuario introduce a través del prompt la
+    temperatura en Celcius y nos muestre en una alerta la temperatura en
+    Fahrenheit.
+    -->
+
+    <script>
+      let cel = parseFloat(prompt("Introduce la temperatura en Celsius: "));
+
+      function celsiusAfahrenheit(cel) {
+        return (cel * 9) / 5 + 32;
+      }
+
+      let fah = celsiusAfahrenheit(cel);
+      alert("La temperatura en Fahrenheit es: " + fah.toFixed(2) + " °F");
+    </script>
+  </body>
 </html>

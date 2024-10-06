@@ -13,5 +13,19 @@
     cadena está formada solo por mayúsculas, solo por minúsculas o por una mezcla
     de ambas.
     -->
+    <script>
+      function cadenadetexto(cadena) {
+        if (cadena === cadena.toUpperCase()) {
+          return "La cadena solo tiene letras mayúsculas.";
+        } else if (cadena === cadena.toLowerCase()) {
+          return "La cadena solo tiene letras minúsculas.";
+        } else {
+          return "La cadena tiene una mezcla de mayúsculas y minúsculas.";
+        }
+      }
+
+      let cadena = prompt("Introduce una cadena de texto: ");
+      alert(cadenadetexto(cadena));
+    </script>
   </body>
 </html>

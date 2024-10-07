@@ -11,7 +11,46 @@
     -->
 
     <script>
-      a;
+      const juego = ["Piedra", "Papel", "Tijera"];
+      let valido = false;
+      const ordenador = juego[Math.floor(Math.random() * juego.length)];
+      const option = prompt(
+        "¿Qué opción deseas elegir? (Piedra, Papel o Tijera)"
+      );
+      const user = option[0].toUpperCase() + option.slice(1);
+      if (option.length > 0) {
+        for (let i = 0; i < juego.length; i++) {
+          if (user === juego[i]) {
+            valido = true;
+          }
+        }
+      }
+
+      if (valido) {
+        let resultado;
+        if (user === ordenador) {
+          resultado = "Empate!";
+        } else if (
+          (user === "Piedra" && ordenador === "Tijera") ||
+          (user === "Papel" && ordenador === "Piedra") ||
+          (user === "Tijera" && ordenador === "Papel")
+        ) {
+          resultado = "¡Ganaste!";
+        } else {
+          resultado = "¡Perdiste!";
+        }
+
+        alert(
+          "Tu eleccion fue " +
+            user +
+            "\nLa elección del PC fue " +
+            ordenador +
+            ". \n" +
+            resultado
+        );
+      } else {
+        alert("El dato introducido no es correcto");
+      }
     </script>
   </body>
 </html>

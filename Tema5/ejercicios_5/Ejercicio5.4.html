@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1 - Tema 5</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 4 - Tema 5</title>
+  </head>
+  <body>
+    <!--
+    Crea un array llamado ciudades con 5 ciudades. Agrega dos ciudades más al final del
+    array y elimina la última ciudad agregada. Elimina la segunda ciudad del array y
+    reemplázala por otra ciudad. Invierte el orden de las ciudades
+    -->
+
+    <script>
+      const ciudades = [
+        "Caracas",
+        "Pariaguan",
+        "Maturin",
+        "Ciudad Guayana",
+        "Merida",
+      ];
+
+      ciudades.push("San Cristóbal", "Caripe");
+      ciudades.pop();
+      ciudades.splice(1, 1, "Maracaibo");
+      ciudades.reverse();
+
+      console.log(ciudades);
+    </script>
+  </body>
 </html>

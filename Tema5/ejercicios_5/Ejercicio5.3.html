@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1 - Tema 5</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3 - Tema 5</title>
+  </head>
+  <body>
+    <!--
+  Dado un array llamado nombres con 6 nombres de personas, ordénalo
+  alfabéticamente. Verifica si el nombre "Pedro" está presente en el array. Encuentra el
+  primer nombre que tenga más de 5 letras. Crea un nuevo array que contenga solo los
+  primeros 3 nombres.-->
+
+    <script>
+      const nombres = [
+        "Pedro",
+        "Francis",
+        "Bruno",
+        "Fer",
+        "Margaret",
+        "Bartolomeo",
+      ];
+
+      const nombresOrdenados = nombres.sort();
+      console.log("Nombre ordenados " + nombresOrdenados);
+
+      const pedroEsta = nombresOrdenados.includes("Pedro");
+
+      console.log('¿Está presente "Pedro" en el array?', pedroEsta);
+
+      const nombreLargo = nombresOrdenados.find((nombre) => nombre.length > 5);
+
+      console.log("Primer nombre con más de 5 letras:", nombreLargo);
+
+      const tresNombres = nombresOrdenados.slice(0, 3);
+
+      console.log("Primeros 3 nombres:", tresNombres);
+    </script>
+  </body>
 </html>

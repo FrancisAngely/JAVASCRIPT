@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1 - Tema 5</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 5 - Tema 5</title>
+  </head>
+  <body>
+    <!--
+    Crea una función que calcule la media de un array de números. Usa la función con un
+array de 6 números generados aleatoriamente entre 0 y 50. Ordena los números
+antes de calcular la media.
+    -->
+
+    <script>
+      const num = [];
+      for (let i = 0; i < 6; i++) {
+        num.push(Math.floor(Math.random() * 50 + 1));
+      }
+
+      num.sort((a, b) => a - b);
+
+      function calculateAverage(array) {
+        return array.reduce((a, b) => a + b, 0) / array.length;
+      }
+
+      const promedio = calculateAverage(num);
+
+      console.log("Los numero son: " + num);
+
+      console.log("La media es: " + promedio.toFixed(2));
+    </script>
+  </body>
 </html>

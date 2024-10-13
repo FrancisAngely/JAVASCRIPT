@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 1 - Tema 5</title>
-</head>
-<body>
-    
-</body>
+  </head>
+
+  <body>
+    <!--
+     Crea un array llamado números con 10 números aleatorios entre 1 y 100. Crea una
+función que reciba ese array y devuelva el valor mínimo y el valor máximo.
+    -->
+    <script>
+      const valores = Array(10)
+        .fill()
+        .map(() => Math.floor(Math.random() * 100) + 1);
+
+      const min = Math.min(...valores);
+      const max = Math.max(...valores);
+
+      console.log("Números:" + valores);
+      console.log("Mínimo:" + min);
+      console.log("Máximo:" + max);
+    </script>
+  </body>
 </html>

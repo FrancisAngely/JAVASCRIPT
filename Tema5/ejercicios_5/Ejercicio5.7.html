@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 7 - Tema 5</title>
+  </head>
+  <body>
+    <!--
+    Dado un array de números llamado ventas con los valores [100, 200, 150, 400, 300],
+calcula la suma total de todas las ventas. Luego agrega un 10% de impuesto a cada
+venta. Verifica si alguna venta es mayor de 500.
+    -->
+
+    <script>
+      const ventas = [100, 200, 150, 400, 300];
+
+      const suma = ventas.reduce((contador, venta) => contador + venta + 0);
+      console.log("Suma total de ventas: " + suma.toFixed(2));
+
+      const ventasConImpuesto = ventas.map((venta) => (venta * 1.1).toFixed(2));
+      console.log("Ventas con impuesto: " + ventasConImpuesto);
+
+      const VentaMayor500 = ventasConImpuesto.some((venta) => venta > 500);
+      console.log("¿Hay alguna venta mayor de 500? " + VentaMayor500);
+    </script>
+  </body>
+</html>

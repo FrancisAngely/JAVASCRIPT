@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1 - Tema 5</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2 - Tema 5</title>
+  </head>
+  <body>
+    <!--
+    Crea un array llamado edades con 10 números. Filtra las edades mayores de 18,
+luego suma 5 años a cada una de las edades filtradas. Convierte el resultado en una
+cadena de texto separada por comas.
+    -->
+
+    <script>
+      const edades = Array(10)
+        .fill()
+        .map(() => Math.floor(Math.random() * 100) + 1);
+
+      const resultado = edades
+        .filter((edad) => edad > 18)
+        .map((edad) => edad + 5)
+        .join(", ");
+
+      console.log(resultado);
+    </script>
+  </body>
 </html>

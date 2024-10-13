@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1 - Tema 5</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 6 - Tema 5</title>
+  </head>
+  <body>
+    <!--
+    Crea un array llamado frutas con 5 nombres de frutas. Convierte todas las frutas a
+mayúsculas, luego obtén un nuevo array con las frutas cuyos nombres tengan más de
+6 letras. Únelas con otro array de dos frutas nuevas.
+    -->
+    <script>
+      const frutas = ["Papaya", "pera", "Limon", "arandanos", "platano"];
+
+      const frutasMayusculas = frutas.map((fruta) => fruta.toUpperCase());
+      console.log(frutasMayusculas);
+
+      const frutasLargas = frutasMayusculas.filter((fruta) => fruta.length > 6);
+      console.log(frutasLargas);
+
+      const frutasNuevas = ["MANDARINA", "MELON"];
+      const frutasFinal = frutasLargas.concat(frutasNuevas);
+      console.log(frutasFinal);
+    </script>
+  </body>
 </html>

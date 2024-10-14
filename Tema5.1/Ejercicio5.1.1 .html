@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Tema 5.1</title>
+</head>
+
+<body>
+    <!--
+    Crea una clase Producto con las propiedades nombre, precio y cantidad. Luego, crea
+    una clase Inventario que maneje una lista de productos. El inventario debe tener
+    métodos para añadir productos, eliminar productos, y consultar el total del
+    inventario (en términos de valor monetario). Usa el método reduce() para calcular el
+    valor total del inventario.
+    -->
+
+    <Script>
+        // crear producto
+        class producto {
+            constructor(nombre, precio, cantidad) {
+                this.nombre = nombre;
+                this.precio = precio;
+                this.cantidad = cantidad;
+            }
+
+        }
+
+        //pruebas
+        const prod1 = new producto("Tornillo", 1.99, 5);
+        console.log(prod1);
+
+        //añadir producto
+        class inventario {
+            constructor() {
+                this.producto = [];
+            }
+            anadirProducto() {
+
+                this.producto.push(producto);
+            }
+            eliminarProducto(nombre) {
+                for (let indice in this.producto) {
+                    if (this.producto[indice].nombre === nombre) {
+                        this.producto.splice(indice, 1);
+                        console.log("Se ha eliminado correctamente por for in");
+                        break;
+                    }
+                }
+            }
+        }
+        const inventarios = new inventario();
+        inventarios.anadirProducto(prod1);
+        inventarios.eliminarProducto(prod1); 
+        console.log(inventario);
+
+        
+
+
+
+
+
+
+
+    </Script>
+</body>
+
+</html>

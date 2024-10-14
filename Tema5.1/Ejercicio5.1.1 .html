@@ -1,69 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 1 - Tema 5.1</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!--
-    Crea una clase Producto con las propiedades nombre, precio y cantidad. Luego, crea
-    una clase Inventario que maneje una lista de productos. El inventario debe tener
+    Crea una clase Producto con las propiedades nombre, precio y cantidad. 
+    
+    Luego, crea una clase Inventario que maneje una lista de productos. 
+    
+    El inventario debe tener
     métodos para añadir productos, eliminar productos, y consultar el total del
     inventario (en términos de valor monetario). Usa el método reduce() para calcular el
     valor total del inventario.
     -->
 
-    <Script>
-        // crear producto
-        class producto {
-            constructor(nombre, precio, cantidad) {
-                this.nombre = nombre;
-                this.precio = precio;
-                this.cantidad = cantidad;
-            }
+    <script>
+      class Producto {
+        constructor(nombre, precio, cantidad) {
+          this.nombre = nombre;
+          this.precio = precio;
+          this.cantidad = cantidad;
+        }
+      }
 
+      class Inventario {
+        constructor() {
+          this.productos = [];
         }
 
-        //pruebas
-        const prod1 = new producto("Tornillo", 1.99, 5);
-        console.log(prod1);
-
-        //añadir producto
-        class inventario {
-            constructor() {
-                this.producto = [];
-            }
-            anadirProducto() {
-
-                this.producto.push(producto);
-            }
-            eliminarProducto(nombre) {
-                for (let indice in this.producto) {
-                    if (this.producto[indice].nombre === nombre) {
-                        this.producto.splice(indice, 1);
-                        console.log("Se ha eliminado correctamente por for in");
-                        break;
-                    }
-                }
-            }
+        añadirProductos(producto) {
+          this.productos.push(producto);
         }
-        const inventarios = new inventario();
-        inventarios.anadirProducto(prod1);
-        inventarios.eliminarProducto(prod1); 
-        console.log(inventario);
 
-        
+        eliminarProductos(nombre) {
+          /*OPCIÓN 1
+            for(let indice in this.productos){
+            if(this.productos[indice].nombre === nombre){
+            this.productos.splice(indice,1);
+            console.log("se ha eliminado correctamente por for in");
+            break;
+            }
+            }
 
+            //OPCIÓN 2
+            for (let producto of this.productos) {
+            let index;
+            if (producto.nombre === nombre) {
+            index = this.productos.indexOf(producto);
+            this.productos.splice(index,1);
+            console.log("se ha eliminado correctamente por for of");
+            break;
+            }
+            }
+*/
 
+            /*OPCIÓN 3 - FILTER
+            this.productos = this.productos.filter(producto => producto.nombre !== nombre);
+            console.log("Se ha eliminado correctamente por filter")
+            */
 
+          //OPCIÓN 2 MODIFICADA A 4 - INDEX MANUAL
+          for (let producto of this.productos) {
+            let index = 0;
+            if (producto.nombre === nombre) {
+              this.productos.splice(index, 1);
+              console.log("se ha eliminado correctamente por for of 2");
+              break;
+            }
+            index++;
+          }
+        }
 
+        mostrarProductos() {
+          console.table(this.productos);
+        }
 
+        totalInventario() {
+          //for in
+          /* let precio = 0;
+            for (let i in this.productos){
+            precio += this.productos[i].precio * this.productos[i].cantidad;
+            }
+            console.log("El precio total del for in es: " + precio)
+            */
 
+          //for of
+          /*let precio = 0;
+            for (let i of this.productos){
+            precio += i.precio * i.cantidad;
+            }
+            console.log("El precio total del for of es: " + precio);
+            */
 
-    </Script>
-</body>
+          //foreach
+          //this.productos.foreach(producto => {total += producto.precio * producto.cantidad});
 
+          //REDUCE
+          return this.productos.reduce(
+            (total, producto) => total + producto.precio * producto.cantidad,
+            0
+          );
+        }
+      }
+      //PRUEBAS
+      const inventario = new Inventario();
+
+      const prod1 = new Producto("Tornillo", 1.99, 5);
+      const prod2 = new Producto("Destornillador", 12.99, 6);
+
+      inventario.añadirProductos(prod1);
+      inventario.añadirProductos(prod2);
+      inventario.mostrarProductos();
+
+      inventario.eliminarProductos("Tornillo");
+      inventario.mostrarProductos();
+
+      console.log(inventario.totalInventario());
+    </script>
+  </body>
 </html>

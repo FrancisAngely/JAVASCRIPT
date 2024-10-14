@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1 - Tema 5.1</title>
+  </head>
+
+  <body>
+    <!--
+    Crea una clase Empleado que tenga las propiedades nombre y sueldo, y un método
+    detalles(). 
+        
+    Luego, crea dos clases derivadas: Gerente y Desarrollador. 
+    
+    El Gerente debetener una lista de empleados a su cargo. 
+    El Desarrollador debe tener una propiedad
+    adicional llamada lenguaje (lenguaje de programación). 
+    Usa super() para invocar al constructor de la clase padre. 
+    Incluye un método en Gerente para añadir empleados a su equipo y un método para mostrar los detalles del equipo.
+    -->
+
+    <script>
+      class Empleado {
+        constructor(nombre, sueldo) {
+          this.nombre = nombre;
+          this.sueldo = sueldo;
+        }
+
+        detalles() {
+          console.log(
+            "Nombre completo: " + this.nombre + "Sueldo: " + this.sueldo
+          );
+        }
+      }
+
+      class Gerente extends Empleado {
+        constructor(nombre, sueldo) {
+          super(nombre, sueldo);
+          this.empleados = [];
+        }
+
+        anadirEmpleado(empleado) {
+          this.empleados.push(empleado);
+        }
+detallesequipo(){
+  console.log(); 
+
+
+
+
+}
+
+      }
+
+      class Desarrollador extends Empleado {
+        constructor(nombre, sueldo, lenguaje) {
+          super(nombre, sueldo);
+          this.lenguaje = lenguaje;
+        }
+      }
+
+      //pruebas
+      //const empleado1 = new Empleado("Juan", 1600);
+      //console.log(empleado1);
+
+      const gerente1 = new Gerente("Clara", 4000);
+      const gerente2 = new Gerente("Pepito", 2000);
+      const desarrollador1 = new Desarrollador("Francis", 3000, "JavaScript");
+      const desarrollador2 = new Desarrollador("Martin", 1750, "Java");
+      const dev3 = new Desarrollador("Diego", 1200, "Phyton");
+
+
+      //console.log(gerente1);
+      //console.log(desarrollador1);
+      //console.log(desarrollador2);
+
+      console.log("----- Equipo de " + gerente1.nombre + "-----");
+      gerente1.anadirEmpleado(desarrollador1);
+    </script>
+
+    <!--
+    Clara Molinos Araiz
+20:39
+//EJERCICIO 2
+class Empleado {
+constructor(nombre,sueldo){
+this.nombre = nombre;
+this.sueldo = sueldo;
+}
+
+detalles(){
+console.log("Nombre Empleado : " + this.nombre + "- Sueldo : " + this.sueldo);
+}
+}
+
+class Gerente extends Empleado{
+constructor(nombre, sueldo){
+super(nombre,sueldo);
+this.empleados = [];
+}
+
+añadirEmpleadosEquipo(empleado){
+this.empleados.push(empleado);
+}
+
+detallesEquipo(){
+console.log("----EQUIPO DE " + this.nombre + " -----")
+console.table(this.empleados);
+}
+
+}
+
+class Desarrollador extends Empleado{
+constructor(nombre, sueldo,lenguaje){
+super(nombre,sueldo);
+this.lenguaje = lenguaje;
+}
+}
+
+//PRUEBAS
+const gerente1 = new Gerente("Clara", 4000);
+const gerente2 = new Gerente("Pepito", 3000);
+const desarrollador1 = new Desarrollador("Martín", 1750, "Java");
+const desarrollador2 = new Desarrollador("Alberto", 2400, "Python")
+const dev3 = new Desarrollador("Diego", 600,"Java");
+
+gerente1.añadirEmpleadosEquipo(desarrollador1);
+gerente1.añadirEmpleadosEquipo(dev3);
+gerente1.detallesEquipo();
+
+
+    -->
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Tema 5.1.3</title>
+</head>
+
+<body>
+    <!--
+Crea un prototipo CuentaBancaria que tenga las propiedades saldo y un método
+depositar(). Luego, crea un prototipo derivado CuentaAhorro que herede de
+CuentaBancaria y tenga un método adicional calcularInteres() que aplique un interés
+del 5% sobre el saldo.
+-->
+    <script>
+        function cuentaBancaria(saldo) {
+            this.saldo = saldo;
+        }
+
+        cuentaBancaria.prototype.depositar = function (cantidad) {
+            this.saldo += cantidad;
+            console.log("Se ha añadido correctamente la cantidad de " + cantidad + " y el saldo es " + this.saldo);
+
+        }
+
+        function cuentaAhorro(saldo) {
+            cuentaBancaria.call(this.saldo);
+        }
+
+        cuentaAhorro.prototype = new Object(cuentaBancaria.prototype);
+        cuentaAhorro.prototype.constructor = cuentaAhorro;
+
+        cuentaAhorro.prototype.calcularInteres = function () {
+            let interes = this.saldo * 0.05;
+            this.saldo += interes;
+            console.log("El interes que se ha sumado a la cuenta es de " + interes + " y el saldo total es " + this.saldo);
+
+        }
+
+        class cuentaBancaria {
+constructor(saldo){
+this.saldo = saldo;
+}
+
+depositar(cantidad){
+this.saldo += cantidad;
+console.log("Se ha añadido correctamente la cantidad de " + cantidad + " y el saldo es " + this.saldo);
+}
+}
+
+class cuentaAhorro extends cuentaBancaria{
+constructor(saldo){
+super(saldo);
+}
+
+calcularInteres(){
+let interes = this.saldo * 0.05;
+this.saldo += interes;
+console.log("El interes que se ha sumado a la cuenta es de " + interes + " y el saldo total es de "+ this.saldo);
+}
+}
+
+//PRUEBAS
+const cuenta1 = new cuentaBancaria(10);
+cuenta1.depositar(500);
+
+const ahorro1 = new cuentaAhorro(50);
+ahorro1.depositar(50);
+ahorro1.calcularInteres();
+
+    </script>
+
+
+<!--
+function cuentaBancaria (saldo){
+this.saldo = saldo;
+}
+
+cuentaBancaria.prototype.depositar = function (cantidad){
+this.saldo += cantidad;
+console.log("Se ha añadido correctamente la cantidad de " + cantidad + " y el saldo es " + this.saldo);
+}
+
+function cuentaAhorro (saldo){
+cuentaBancaria.call(this,saldo);
+}
+
+cuentaAhorro.prototype = new Object(cuentaBancaria.prototype);
+cuentaAhorro.prototype.constructor = cuentaAhorro;
+
+cuentaAhorro.prototype.calcularInteres = function (){
+let interes = this.saldo * 0.05;
+this.saldo += interes;
+console.log("El interes que se ha sumado a la cuenta es de " + interes + " y el saldo total es de "+ this.saldo);
+}
+
+class cuentaBancaria {
+constructor(saldo){
+this.saldo = saldo;
+}
+
+depositar(cantidad){
+this.saldo += cantidad;
+console.log("Se ha añadido correctamente la cantidad de " + cantidad + " y el saldo es " + this.saldo);
+}
+}
+
+class cuentaAhorro extends cuentaBancaria{
+constructor(saldo){
+super(saldo);
+}
+
+calcularInteres(){
+let interes = this.saldo * 0.05;
+this.saldo += interes;
+console.log("El interes que se ha sumado a la cuenta es de " + interes + " y el saldo total es de "+ this.saldo);
+}
+}
+
+//PRUEBAS
+const cuenta1 = new cuentaBancaria(10);
+cuenta1.depositar(500);
+
+const ahorro1 = new cuentaAhorro(50);
+ahorro1.depositar(50);
+ahorro1.calcularInteres();
+
+
+-->
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Tema 5.1.4</title>
+</head>
+
+<body>
+    <!--
+    Crea una función validarEmail() que acepte un correo electrónico como argumento y
+use una expresión regular para verificar si es válido. Usa el método test() y explica la
+importancia de usar expresiones regulares en la validación de datos. 
+
+-->
+<script>
+    function validarCorreo(email) {
+   
+        let expresion = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return expresion.test(email);
+    }
+
+    // Ejemplos
+    let correo = prompt("Introduce un email");
+    if (validarCorreo(correo)) {
+        alert("El correo es válido");
+    } else {
+        alert("El correo no es válido");
+    }
+</script>
+
+</body>
+
+</html>

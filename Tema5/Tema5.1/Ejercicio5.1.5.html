@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Tema 5.1.5</title>
+</head>
+
+<body>
+    <!--
+Crea un objeto curso que contenga un array de objetos estudiante, donde cada
+estudiante tenga nombre, nota y edad. Convierte el objeto en una cadena JSON
+usando JSON.stringify() y luego de nuevo en un objeto usando JSON.parse(). Modifica
+la nota de uno de los estudiantes.
+    -->
+    <script>
+        const curso = {
+            estudiante: [
+                { nombre: "Pedro", nota: 5, edad: 26 },
+                { nombre: "María", nota: 9, edad: 20 }
+            ]
+        }
+
+        let json = JSON.stringify(curso);
+        console.log("La cadena en JSON es: " + json);
+
+        let txt = JSON.parse(json);
+        console.log("La cadena convertida a objeto es " + txt);
+
+        txt.estudiante[1].nota = 8;
+        console.log(txt.estudiante);
+
+    </script>
+    
+</body>
+
+</html>

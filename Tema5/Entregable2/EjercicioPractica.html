@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad extra</title>
+</head>
+
+<body>
+
+    <!--
+        Se debe crear un sistema para una gestión de torneos de videojuegos. 
+        Clase 1: El sistema debe incluir una clase Videojuego con las propiedades nombre, género y plataforma. 
+        Clase 2: Además, se debe crear una clase Torneo que maneje los videojuegos, 
+        permitiendo añadir videojuegos, eliminarlos por su nombre, buscar por género, 
+        y calcular el total de juegos disponibles.
+        
+        
+        
+        Clase 3 y extrend y  Clase 4: También, incluye una clase Participante con las propiedades nombre, edad y nivel (donde el nivel representa la habilidad del jugador). A partir de Participante, 
+        debe distinguir entre las clases Jugador y Espectador, donde Jugador tiene una propiedad adicional llamada ranking y Espectador tiene una propiedad llamada preferencia que representa 
+        el género de videojuegos que prefiere ver. 
+
+
+         Clase 5: La clase Jugador debe tener un método que 
+        permita mejorar el ranking (es decir, subir de posición en el torneo). 
+        Además, se debe crear una función validarNick() que acepte un apodo de jugador 
+        y use una expresión regular para validar si el nombre de usuario es válido 
+        (debe contener solo letras y números, sin espacios ni símbolos como !¡?¿$%).        
+        Por último, se debe crear un objeto Competencia que contenga un array de participantes
+        (jugadores y espectadores) para después convertir este objeto a una cadena JSON y 
+        luego volver a convertirlo a un objeto. Posteriormente, modifica el nivel de uno de 
+        los jugadores en el objeto convertido y muestra los detalles actualizado.     
+        -->
+
+    <script>
+        class Videojuego {
+            constructor(nombre, genero, plataforma) {
+                this.nombre = nombre;
+                this.genero = genero;
+                this.plataforma = plataforma;
+            }
+        }
+
+        class Torneo {
+            constructor() {
+                this.videojuego = [];
+            }
+
+            insertVJ(videojuego) {
+                this.videojuego.push(videojuego);
+            }
+
+            deleteName(nombre) {
+                for (let videoj of this.videojuego) {
+                    let index;
+                    if (videoj.nombre === nombre) {
+                        index = this.videojuego.indexOf(videoj);
+                        this.videojuego.splice(index, 1);
+                        console.log("El videojuego se ha eliminado correctamente");
+                        break;
+                    }
+                }
+            }
+
+            look(genero) {
+            this.videojuego = this.videojuego.filter(videojuego => videojuego.genero === genero);
+            
+            console.log("Videojuegos del género '" + genero + "':", this.videojuego);
+            
+        }
+
+            mostrarVJ() {
+                console.table(this.videojuego);
+            }
+
+            calculateGamesAvailable() {
+                return this.videojuego.length;
+            }
+        }
+
+        // Prueba 
+        const torneos = new Torneo();
+
+        const vj1 = new Videojuego("FIFA-2025", "Fútbol", "Origin");
+        const vj2 = new Videojuego("Tekken 8", "Lucha", "Stream");
+        const vj3 = new Videojuego("Prince of Persia: The Lost Crown", "Acción-Aventura", "PlayStation 4");
+
+        torneos.insertVJ(vj1);
+        torneos.insertVJ(vj2);
+        torneos.insertVJ(vj3);
+        torneos.mostrarVJ();
+
+        torneos.deleteName("FIFA-2025");
+        torneos.mostrarVJ();     
+        console.log("El total de juegos disponibles es " + torneos.calculateGamesAvailable());
+        torneos.look("Lucha");
+
+    </script>
+
+</body>
+
+</html>

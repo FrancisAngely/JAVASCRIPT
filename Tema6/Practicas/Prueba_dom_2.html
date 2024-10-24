@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="titulo">Veamos como podemos recorrer el DOM</h1>
+    <nav>
+        <ul id="primeralista">
+            <li>Primer elemento de la lista</li>
+            <li>Segundo elemento de la lista</li>
+            <li>Tercero elemento de la lista</li>
+            <ul>
+                <li>Subprimer elemento</li>
+                <li>Subprimer elemento</li>
+            </ul>
+        </ul>
+    </nav>
+    <script>
+        const titular = document.getElementById("titulo");
+        const listaprimera = document.getElementById("primeralista");
+        const nuevoElemento=document.createElement("li");
+        nuevoElemento.textContent="Elemento Añadido";
+
+
+        //console.log(listaprimera.parentNode);
+        //console.log(listaprimera.parentElement);
+        //console.log(document.parentElement); 
+
+        //console.log(listaprimera.parentElement.parentElement);
+        //console.log(document.parentElement); 
+        //console.log(listaprimera.childNodes); 
+
+        //listaprimera.insertAdjacentElement("beforebegin", nuevoElemento);   
+        //listaprimera.insertAdjacentElement("beforeend", nuevoElemento);  
+
+        //listaprimera.children[1].insertAdjacentHTML("afterend","<li>Nuevo elemento añadido con HTML</li>"); 
+    </script>
+</body>
+</html>

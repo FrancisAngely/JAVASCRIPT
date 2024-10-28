@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aplicación de Gestión de Ítems</title>
     <style>
-      body {
+    /*  body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
         margin: 0;
@@ -43,7 +43,7 @@
 
       button:hover {
         background-color: #218838;
-      }
+      }*/
     </style>
   </head>
   <body>
@@ -54,7 +54,7 @@
     pulsemos el segundo botón “Elimina ítem”, se eliminará el último elemento que
     tengamos en el select.
     -->
-    <div class="container">
+    <!--<div class="container">
       <h1>Gestión de Ítems</h1>
       <input type="text" id="itemInput" placeholder="Introduce un ítem" />
       <select id="itemSelect">
@@ -62,7 +62,17 @@
       </select>
       <button id="addItemButton">Añade ítem</button>
       <button id="removeItemButton">Elimina ítem</button>
-    </div>
+    </div> -->
+
+    <h1>Lista de Colores</h1>
+    <input type="text" id="itemInput" placeholder="Introduce un color" />
+    <select id="select">
+      <option value="" disabled selected>Selecciona un ítem</option>
+    </select>
+    <button id="anadirElement">Añade ítem</button>
+    <button id="removeElement">Elimina ítem</button>
+
+
 
     <script src="Ejercicio3_dom.js"></script>
   </body>

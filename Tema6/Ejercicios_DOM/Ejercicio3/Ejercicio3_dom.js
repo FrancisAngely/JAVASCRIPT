@@ -1,4 +1,9 @@
-document.getElementById("addItemButton").addEventListener("click", function () {
+const colores=document.getElementById("Colores"); 
+const txt= document.getElementById("txt");
+const boton_anadir= getElementById("anadir");
+const boton_eliminar= getElementById("eliminar");
+
+/*document.getElementById("addItemButton").addEventListener("click", function () {
   const itemInput = document.getElementById("itemInput");
   const itemSelect = document.getElementById("itemSelect");
 
@@ -26,4 +31,4 @@ document
     } else {
       alert("No hay ítems para eliminar.");
     }
-  });
+  });*/

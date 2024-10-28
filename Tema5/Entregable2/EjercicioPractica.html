@@ -1,186 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad extra</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Actividad extra</title>
-</head>
+  <body>
+    <!-- 
+    Se debe crear un sistema para una gestión de torneos de videojuegos. 
+    El sistema debe incluir una clase Videojuego con las propiedades nombre, 
+    género y plataforma. Además, se debe crear una clase Torneo que maneje los 
+    videojuegos, permitiendo añadir videojuegos, eliminarlos por su nombre, 
+    buscar por género, y calcular el total de juegos disponibles. 
+    También, incluye una clase Participante con las propiedades nombre, 
+    edad y nivel (donde el nivel representa la habilidad del jugador). 
+    A partir de Participante, debe distinguir entre las clases Jugador y 
+    Espectador, donde Jugador tiene una propiedad adicional llamada ranking 
+    y Espectador tiene una propiedad llamada preferencia que representa el 
+    género de videojuegos que prefiere ver. La clase Jugador debe tener un 
+    método que permita mejorar el ranking (es decir, subir de posición en el 
+    torneo). Además, se debe crear una función validarNick() que acepte un 
+    apodo de jugador y use una expresión regular para validar si el nombre de 
+    usuario es válido (debe contener solo letras y números, sin espacios ni 
+    símbolos como !¡?¿$%). Por último, se debe crear un objeto Competencia 
+    que contenga un array de participantes (jugadores y espectadores) 
+    para después convertir este objeto a una cadena JSON y luego volver 
+    a convertirlo a un objeto. Posteriormente, modifica el nivel de uno de 
+    los jugadores en el objeto convertido y muestra los detalles actualizado
+    -->
 
-<body>
-  <!--
-        Se debe crear un sistema para una gestión de torneos de videojuegos. 
-        Clase 1: El sistema debe incluir una clase Videojuego con las propiedades nombre, género y plataforma. 
-        Clase 2: Además, se debe crear una clase Torneo que maneje los videojuegos, 
-        permitiendo añadir videojuegos, eliminarlos por su nombre, buscar por género, 
-        y calcular el total de juegos disponibles.
-        
-        
-        
-        Clase 3 y extrend y  Clase 4: También, incluye una clase Participante con las propiedades nombre, edad y nivel (donde el nivel representa la habilidad del jugador). A partir de Participante, 
-        debe distinguir entre las clases Jugador y Espectador, donde Jugador tiene una propiedad adicional llamada ranking y Espectador tiene una propiedad llamada preferencia que representa 
-        el género de videojuegos que prefiere ver. 
-
-
-         Clase 5: La clase Jugador debe tener un método que 
-        permita mejorar el ranking (es decir, subir de posición en el torneo). 
-        Además, se debe crear una función validarNick() que acepte un apodo de jugador 
-        y use una expresión regular para validar si el nombre de usuario es válido 
-        (debe contener solo letras y números, sin espacios ni símbolos como !¡?¿$%).        
-        Por último, se debe crear un objeto Competencia que contenga un array de participantes
-        (jugadores y espectadores) para después convertir este objeto a una cadena JSON y 
-        luego volver a convertirlo a un objeto. Posteriormente, modifica el nivel de uno de 
-        los jugadores en el objeto convertido y muestra los detalles actualizado.     
-        -->
-
-  <script>
-    class videojuego {
-      constructor(nombre, genero, plataforma) {
-        this.nombre = nombre;
-        this.genero = genero;
-        this.plataforma = plataforma;
-      }
-    }
-
-    class Torneo {
-      constructor() {
-        this.videojuegos = [];
-      }
-
-      insertVJ(videojuego) {
-        this.videojuegos.push(videojuego);
-      }
-
-      deleteName(nombre) {
-        for (let videoj of this.videojuegos) {
-          let index;
-          if (videoj.nombre === nombre) {
-            index = this.videojuegos.indexOf(videoj);
-            this.videojuegos.splice(index, 1);
-            console.log("El videojuego se ha eliminado correctamente");
-            break;
-          }
+    <script>
+      class videojuego {
+        constructor(nombre, genero, plataforma) {
+          this.nombre = nombre;
+          this.genero = genero;
+          this.plataforma = plataforma;
         }
       }
 
-      look(genero) {
-        const videojuegosFiltrados = [];
-        for (let videojuego of this.videojuegos) {
-          if (videojuego.genero === genero) {
-            videojuegosFiltrados.push(videojuego);
+      class Torneo {
+        constructor() {
+          this.videojuegos = [];
+        }
+
+        insertVJ(videojuego) {
+          this.videojuegos.push(videojuego);
+        }
+
+        deleteName(nombre) {
+          for (let videoj of this.videojuegos) {
+            let index;
+            if (videoj.nombre === nombre) {
+              index = this.videojuegos.indexOf(videoj);
+              this.videojuegos.splice(index, 1);
+              console.log("El videojuego se ha eliminado correctamente");
+              break;
+            }
           }
         }
-        console.log(
-          "Videojuegos del género '" + genero + "':",
-          videojuegosFiltrados
-        );
+
+        look(genero) {
+          const videojuegosFiltrados = this.videojuegos.find(
+            (videojuego) => videojuego.genero == genero
+          );
+          console.log(videojuegosFiltrados);
+        }
+
+        mostrarVJ() {
+          console.table(this.videojuegos);
+        }
+
+        calculateGamesAvailable() {
+          return this.videojuegos.length;
+        }
       }
 
-      mostrarVJ() {
-        console.table(this.videojuegos);
+      class Participante {
+        constructor(nombre, edad, nivel) {
+          this.nombre = nombre;
+          this.edad = edad;
+          this.nivel = nivel;
+        }
       }
 
-      calculateGamesAvailable() {
-        return this.videojuegos.length;
-      }
-    }
+      class Jugador extends Participante {
+        constructor(nombre, edad, nivel, ranking) {
+          super(nombre, edad, nivel);
+          this.ranking = ranking;
+        }
 
-    class Participante {
-      constructor(nombre, edad, nivel) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.nivel = nivel;
-      }
-    }
-
-    class Jugador extends Participante {
-      constructor(nombre, edad, nivel, ranking) {
-        super(nombre, edad, nivel);
-        this.ranking = ranking;
+        mejorarRanking() {
+          this.ranking++;
+          console.log("El jugador ha mejorado su ranking a " + this.ranking);
+        }
       }
 
-      mejorarRanking() {
-        this.ranking++;
-        console.log("El jugador ha mejorado su ranking a " + this.ranking);
-      }
-    }
-
-    class Espectador extends Participante {
-      constructor(nombre, edad, nivel, preferencia) {
-        super(nombre, edad, nivel);
-        this.preferencia = preferencia;
-      }
-    }
-
-    function validarNick(apodo) {
-      const regex = /^[a-zA-Z0-9]+$/;
-      return regex.test(apodo);
-    }
-
-    class Competencia {
-      constructor() {
-        this.participantes = [];
+      class Espectador extends Participante {
+        constructor(nombre, edad, nivel, preferencia) {
+          super(nombre, edad, nivel);
+          this.preferencia = preferencia;
+        }
       }
 
-      agregarParticipante(participante) {
-        this.participantes.push(participante);
+      function validarNick(apodo) {
+        const regex = /^[a-zA-Z0-9]+$/;
+        return regex.test(apodo);
       }
 
-      convertirAJSON() {
-        return JSON.stringify(this.participantes);
+      class Competencia {
+        constructor() {
+          this.participantes = [];
+        }
+
+        agregarParticipante(participante) {
+          this.participantes.push(participante);
+        }
+
+        convertirAJSON() {
+          return JSON.stringify(this.participantes);
+        }
+
+        convertirDeJSON(json) {
+          return JSON.parse(json);
+        }
       }
 
-      convertirDeJSON(json) {
-        return JSON.parse(json);
-      }
-    }
+      // Prueba
+      const torneos = new Torneo();
 
-    // Prueba
-    const torneos = new Torneo();
+      const vj1 = new videojuego("FIFA-2025", "Fútbol", "Origin");
+      const vj2 = new videojuego("Tekken 8", "Lucha", "Stream");
+      const vj3 = new videojuego(
+        "Prince of Persia: The Lost Crown",
+        "Acción-Aventura",
+        "PlayStation 4"
+      );
 
-    const vj1 = new videojuego("FIFA-2025", "Fútbol", "Origin");
-    const vj2 = new videojuego("Tekken 8", "Lucha", "Stream");
-    const vj3 = new videojuego(
-      "Prince of Persia: The Lost Crown",
-      "Acción-Aventura",
-      "PlayStation 4"
-    );
+      torneos.insertVJ(vj1);
+      torneos.insertVJ(vj2);
+      torneos.insertVJ(vj3);
+      torneos.mostrarVJ();
 
-    torneos.insertVJ(vj1);
-    torneos.insertVJ(vj2);
-    torneos.insertVJ(vj3);
-    torneos.mostrarVJ();
+      torneos.deleteName("FIFA-2025");
+      torneos.mostrarVJ();
 
-    torneos.deleteName("FIFA-2025");
-    torneos.mostrarVJ();
+      console.log(
+        "El total de juegos disponibles es " + torneos.calculateGamesAvailable()
+      );
 
-    console.log(
-      "El total de juegos disponibles es " + torneos.calculateGamesAvailable()
-    );
+      torneos.look("Lucha");
 
-    torneos.look("Lucha");
+      const competencia = new Competencia();
 
-    const competencia = new Competencia();
+      const jugador1 = new Jugador("Bruno", 15, 10, 1);
+      const jugador2 = new Jugador("Eduardo", 37, 15, 2);
+      const espectador1 = new Espectador("Fer", 40, 5, "Fútbol");
 
-    const jugador1 = new Jugador("Bruno", 15, 10, 1);
-    const jugador2 = new Jugador("Eduardo", 37, 15, 2);
-    const espectador1 = new Espectador("Fer", 40, 5, "Fútbol");
+      competencia.agregarParticipante(jugador1);
+      competencia.agregarParticipante(jugador2);
+      competencia.agregarParticipante(espectador1);
 
-    competencia.agregarParticipante(jugador1);
-    competencia.agregarParticipante(jugador2);
-    competencia.agregarParticipante(espectador1);
+      const json = competencia.convertirAJSON();
+      console.log("JSON:", json);
 
-    const json = competencia.convertirAJSON();
-    console.log("JSON:", json);
-   
-    const participantes = competencia.convertirDeJSON(json);
-    console.log("Participantes:", participantes);
-    
+      const participantes = competencia.convertirDeJSON(json);
+      console.log("Participantes:", participantes);
 
-    participantes[0].nivel = 20;
-    console.log("Participantes actualizados:", participantes);
-
-  </script>
-</body>
-
+      participantes[0].nivel = 20;
+      console.log("Participantes actualizados:", participantes);
+    </script>
+  </body>
 </html>

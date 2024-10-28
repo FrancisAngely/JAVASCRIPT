@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplicación de Gestión de Ítems</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      input,
+      select,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+      }
+
+      button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+    Realizar una aplicación donde nos encontraremos un cuadro de texto, un select
+    y dos botones. Cuando pulsemos el primer botón “Añade ítem”, se añadirá la
+    información del cuadro de texto al select, siempre que no esté vacía. Cuando
+    pulsemos el segundo botón “Elimina ítem”, se eliminará el último elemento que
+    tengamos en el select.
+    -->
+    <div class="container">
+      <h1>Gestión de Ítems</h1>
+      <input type="text" id="itemInput" placeholder="Introduce un ítem" />
+      <select id="itemSelect">
+        <option value="" disabled selected>Selecciona un ítem</option>
+      </select>
+      <button id="addItemButton">Añade ítem</button>
+      <button id="removeItemButton">Elimina ítem</button>
+    </div>
+
+    <script src="Ejercicio3_dom.js"></script>
+  </body>
+</html>

@@ -1,96 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-    .prueba{
-        border: 1px solid rgb(146, 143, 143);
-        margin-top: 14px;
-        margin-bottom: 9px;
-        background-color: #e2fee2;
-        align-items: center;
-        width: 100%;
-        height: 80px;
-    }
-    .dwec{
-        border: 1px solid rgb(146, 143, 143);
-        margin-top: 14px;
-        margin-bottom: 9px;
-        background-color:#fdfde1 ;
-        align-items: center;
-        width: 100%;
-        height: 80px;
-    }
-    .exam{
-        border: 1px solid rgb(146, 143, 143);
-        margin-top: 14px;
-        margin-bottom: 9px;
-        background-color: #fee3e3;
-        align-items: center;
-        width: 100%;
-        height: 80px;
-    }
-    #titulo, #descripcion, #prioridad {
-        border: 1px solid rgb(151, 147, 147);
-    }
+    <link rel="stylesheet" href="aplicacion.css" />
+  </head>
 
+  <body>
+    <h1>Gestor de Tareas con Prioridades</h1>
+    <label for="titulo">Título de la Tarea:</label>
+    <input type="text" id="titulo" placeholder="Introduce el título" />
 
-    </style>
-</head>
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" placeholder="Describe la tarea" />
 
-<body>
-    <!--
-    Crear una aplicación en la que un usuario pueda añadir, modificar, y eliminar tareas con prioridad asignada (alta, media o baja).
-    - Las tareas estarán compuestas por un título, descripción y prioridad.
-    - Las tareas deberán poder organizarse visualmente por prioridad y poder marcarse como "completadas". 
-    - Las tareas completadas aparecerán tachadas y al final de la lista.
-    - Al añadir  la tara comprobará que el título no esté vacio.
-    - La lista de tareas se generará con elementos de tipo <li> y para representar las prioridades de las clases se puede aplicar un estílo diferente.
-    - La interfaz de usuario deberá ser algo como la imagen que se adjunta en los archivos adicionales.
-    -->
-
-    <h1>Gestor de tareas adicionales</h1>
-    <label for="title">Titulo de la Tarea:</label>
-    <input type="text" id="titulo" placeholder="Titulo de la tarea">
-
-    <label for="Description">Descripción:</label>
-    <input type="text" id="descripcion" placeholder="Descripción">
-
-    <label for="prioridad">Prioridad:</label>    
-    <select name="prioridad" id="prioridad">
-        <option value="p"></option>
-        <option value="p1">Alta</option>
-        <option value="p2">Media</option>
-        <option value="p3">Baja</option>
+    <label for="prioridad">Prioridad:</label>
+    <select id="prioridad">
+      <option value="baja">Baja</option>
+      <option value="media">Media</option>
+      <option value="alta">Alta</option>
     </select>
 
-    <button name="anadir" type="button" id="anadir">
-        Añadir tareas
-    </button>
-    <button name="eliminar" type="button" id="eliminar">
-        Eliminar tareas
-    </button>
-    <br><br>
-    <h3>Lista de tareas</h3>
+    <button id="anadir">Añadir Tarea</button>
+    <button id="eliminarCompletadas">Eliminar Completadas</button>
 
-    <div class="prueba" id="prue"> 
-        <span><b>Prueba</b></span>
-        <span>-Prueba</span>
-    </div>
+    <h3>Lista de Tareas</h3>
+    <ul id="listaTareas"></ul>
 
-    <div class="dwec" id="ejer"> 
-        <span><b>Ejercicio de DWAC</b></span>
-        <span>-Ejercicios sobre las tareas</span>
-    </div>
-
-    <div class="exam" id="exam"> 
-        <span><b>Examen</b></span>
-        <span>-Examen de dwec</span>
-    </div>
     <script src="aplicacionDOM.js"></script>
-</body>
-
+  </body>
 </html>

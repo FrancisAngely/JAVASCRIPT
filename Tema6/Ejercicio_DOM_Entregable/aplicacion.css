@@ -1,0 +1,74 @@
+body {
+        font-family: Arial, sans-serif;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      input,
+      select {
+        padding: 5px;
+        margin: 0 5px;
+        width: 150px;
+      }
+
+      button {
+        padding: 5px 10px;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        font-size: 1em;
+      }
+
+      li .descripcion {
+        margin-right: 10px;
+      }
+
+      li.completada {
+        text-decoration: line-through;
+        opacity: 0.6;
+      }
+
+      button {
+        margin-left: 5px;
+      }
+
+      li.completada {
+        text-decoration: line-through;
+        opacity: 0.6;
+      }
+
+      .baja {
+        background-color: #d4fcd4;
+      }
+
+      .media {
+        background-color: #fffcc7;
+      }
+
+      .alta {
+        background-color: #ffd6d6;
+      }
+
+      button.completar {
+        background-color: #e0e0e0;
+        border: 1px solid #bbb;
+        padding: 5px;
+        border-radius: 3px;
+      }

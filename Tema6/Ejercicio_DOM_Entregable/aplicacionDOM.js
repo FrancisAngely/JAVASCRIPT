@@ -84,9 +84,9 @@ function editarTarea(tarea) {
   const descripcionElement = tarea.querySelector(".descripcion");
 
   titulo.value = tituloElement.textContent;
-  descripcion.value=descripcionElement.textContent; 
+  descripcion.value=descripcionElement.textContent;
+  
 
- 
 }
 
 //Resolucion clase:

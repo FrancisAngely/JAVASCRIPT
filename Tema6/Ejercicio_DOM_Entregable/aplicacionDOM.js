@@ -36,7 +36,7 @@ function agregarTarea() {
 
   const tarea = crearElementoTarea(titulo, descripcion, prioridad);
   listaTareas.appendChild(tarea);
-  ordenarPorPrioridad(); // Añade esta línea
+  ordenarPorPrioridad();
 
   document.getElementById("titulo").value = "";
   document.getElementById("descripcion").value = "";
@@ -70,6 +70,101 @@ function editarTarea(tarea) {
   const descripcionElement = tarea.querySelector(".descripcion");
 
   const nuevoTitulo = prompt(
+    "Edita el titulo de la tarea",
+    tituloElement.textContent
+  );
+}
+
+if (nuevoTitulo && nuevoTitulo.trim()) {
+  tituloElement.textContent = nuevoTitulo;
+  descripcionElement.textContent = `- ${
+    prompt(
+      "Edita la descripción de la tarea:",
+      descripcionElement.textContent.slice(2)
+    ) || ""
+  }`;
+} else {
+  alert("El título de la tarea no puede estar vacío.");
+}
+
+function eliminarCompletadas() {
+  const tareasCompletadas = listaTareas.querySelectorAll(".completada");
+  tareasCompletadas.forEach((tarea) => tarea.remove());
+}
+
+function actualizarOrdenTareas() {
+  const completadas = document.querySelectorAll(".completada");
+  ordenarPorPrioridad();
+
+  completadas.forEach((tarea) => listaTareas.appendChild(tarea));
+}
+
+//Resolucion clase:
+
+/*
+const titulo = document.getElementById("titulo");
+const descripcion = document.getElementById("descripcion");
+const prioridad = document.getElementById("prioridades");
+const añadir = document.getElementById("añadir");
+const eliminar = document.getElementById("eliminar");
+const lista = document.getElementById("lista_tareas");
+
+
+añadir.addEventListener("click", function(){
+if(titulo.value !== ""){
+console.log("Todo ok");
+const elemento = document.createElement("li");
+elemento.textContent = `${titulo.value} - ${descripcion.value}`;
+elemento.value = `${titulo.value} - ${descripcion.value}`;
+
+const completar = document.createElement("button");
+completar.textContent = "Completar";
+completar.value = "Completar";
+
+elemento.appendChild(completar);
+
+if(prioridad.value === "baja"){
+elemento.classList.add("baja");
+}else if(prioridad.value === "media"){
+elemento.classList.add("media");
+}else{
+elemento.classList.add("alta");
+}
+lista.appendChild(elemento);
+
+completar.addEventListener("click", function() {
+elemento.classList.add("completada");
+
+//1-forma
+// if(elemento.classList.contains("completada")){
+// elemento.remove();
+// lista.appendChild(elemento);
+// }
+
+//2-forma
+/*if(elemento.classList.contains("completada")){
+elemento.remove();
+lista.insertBefore(elemento,null);
+} 
+
+//3- forma
+//lista.insertAdjacentElement("beforeend", elemento);
+
+//4- forma
+const clonar = elemento.cloneNode(true);
+elemento.remove();
+lista.appendChild(clonar);
+});
+}else{
+alert("No has introducido el título");
+}
+})
+*/
+/*function editarTarea(tarea) {
+  const tituloElement = tarea.querySelector(".titulo strong");
+  const descripcionElement = tarea.querySelector(".descripcion");
+
+  const nuevoTitulo = prompt(
     "Edita el título de la tarea:",
     tituloElement.textContent
   );
@@ -85,15 +180,4 @@ function editarTarea(tarea) {
   } else {
     alert("El título de la tarea no puede estar vacío.");
   }
-}
-
-function eliminarCompletadas() {
-  const tareasCompletadas = listaTareas.querySelectorAll(".completada");
-  tareasCompletadas.forEach((tarea) => tarea.remove());
-}
-
-function actualizarOrdenTareas() {
-  const completadas = document.querySelectorAll(".completada");
-  ordenarPorPrioridad();
-  completadas.forEach((tarea) => listaTareas.appendChild(tarea));
-}
+}*/

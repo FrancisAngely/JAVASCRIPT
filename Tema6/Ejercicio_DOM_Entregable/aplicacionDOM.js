@@ -1,6 +1,8 @@
 const listaTareas = document.getElementById("listaTareas");
 const anadir = document.getElementById("anadir");
 const deleteCompletadas = document.getElementById("eliminarCompletadas");
+const titulo = document.getElementById("titulo");
+
 
 anadir.addEventListener("click", agregarTarea);
 deleteCompletadas.addEventListener("click", eliminarCompletadas);
@@ -25,16 +27,16 @@ function ordenarPorPrioridad() {
 }
 
 function agregarTarea() {
-  const titulo = document.getElementById("titulo").value.trim();
   const descripcion = document.getElementById("descripcion").value.trim();
   const prioridad = document.getElementById("prioridad").value;
+  console.log(titulo);
 
-  if (!titulo) {
+  if (titulo.value === "") {
     alert("El título de la tarea no puede estar vacío.");
     return;
   }
 
-  const tarea = crearElementoTarea(titulo, descripcion, prioridad);
+  const tarea = crearElementoTarea(titulo.value, descripcion, prioridad);
   listaTareas.appendChild(tarea);
   ordenarPorPrioridad();
 
@@ -65,28 +67,6 @@ function crearElementoTarea(titulo, descripcion, prioridad) {
   return tarea;
 }
 
-function editarTarea(tarea) {
-  const tituloElement = tarea.querySelector(".titulo strong");
-  const descripcionElement = tarea.querySelector(".descripcion");
-
-  const nuevoTitulo = prompt(
-    "Edita el titulo de la tarea",
-    tituloElement.textContent
-  );
-}
-
-if (nuevoTitulo && nuevoTitulo.trim()) {
-  tituloElement.textContent = nuevoTitulo;
-  descripcionElement.textContent = `- ${
-    prompt(
-      "Edita la descripción de la tarea:",
-      descripcionElement.textContent.slice(2)
-    ) || ""
-  }`;
-} else {
-  alert("El título de la tarea no puede estar vacío.");
-}
-
 function eliminarCompletadas() {
   const tareasCompletadas = listaTareas.querySelectorAll(".completada");
   tareasCompletadas.forEach((tarea) => tarea.remove());
@@ -97,6 +77,16 @@ function actualizarOrdenTareas() {
   ordenarPorPrioridad();
 
   completadas.forEach((tarea) => listaTareas.appendChild(tarea));
+}
+
+function editarTarea(tarea) {
+  const tituloElement = tarea.querySelector(".titulo strong");
+  const descripcionElement = tarea.querySelector(".descripcion");
+
+  titulo.value = tituloElement.textContent;
+  descripcion.value=descripcionElement.textContent; 
+
+ 
 }
 
 //Resolucion clase:

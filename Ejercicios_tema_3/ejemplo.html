@@ -27,3 +27,35 @@
     </script>
   </body>
 </html>
+
+<!--
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("form");
+    
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita el envío del formulario por defecto
+        
+        // Obtener los valores de los campos
+        const genero = document.getElementById("sex_id").value;
+        const nombre = document.getElementById("nombre").value;
+        const apellidos = document.getElementById("apellidos").value;
+        const email = document.getElementById("email").value;
+        const texto = document.getElementById("texto1").value;
+
+        // Validar campos
+        if (genero === "Selecciona" || !nombre || !apellidos || !email) {
+            alert("Por favor, completa todos los campos obligatorios.");
+            return;
+        }
+
+        // Aquí podrías realizar más validaciones según lo que necesites
+
+        // Mostrar mensaje de éxito
+        alert(`Formulario enviado con éxito!\nNombre: ${nombre} ${apellidos}\nEmail: ${email}\nTexto: ${texto}`);
+        
+        // Aquí podrías enviar los datos a un servidor o realizar otra acción
+    });
+});
+
+
+-->

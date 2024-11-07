@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <h1>Formulario Escolar</h1>
+    <form action="formularioEscolar">
+        <fieldset>
+            <legend>Rellenar</legend>
+            <div>
+              <label for="gen">Genero</label>
+                <select name="sex_id" id="sex_id">
+                    <option>Selecciona</option>
+                    <option value="g1">Hombre</option>
+                    <option value="g2">Mujer</option>
+                    <option value="g3">Otro</option>
+                </select>
+                
+                <h2>Elige el lenguaje utilizado</h2>
+                <div>
+                    <input type="radio" id="java" name="lenguajes" value="java">
+                    <label for="java"><b>Java</b></label>
+                    <input type="radio" id="python" name="lenguajes" value="python">
+                    <label for="python"><b>python</b></label>
+                    <input type="radio" id="html" name="lenguajes" value="html">
+                    <label for="html"><b>HTML</b></label>
+                    <input type="radio" id="vb" name="lenguajes" value="vb">
+                    <label for="vb"><b>Visual Basic</b></label>
+                    <input type="radio" id="css" name="lenguajes" value="css">
+                    <label for="css"><b>CSS</b></label>
+                </div>
+                <br><br>
+                <textarea name="texto1" id="texto1" rows="10" cols="70">Por favor, escriba aqui</textarea>
+                <br><br>
+                <div>
+                    <label for="">Instituto</label>
+                    <input type="text" id="insti" name="pdata" value="">
+                    <br>
+                    <label for="">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" value="">
+                    <br>
+                    <label for="">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" value="">
+                    <br>
+                    <label for="">E-mail</label>
+                    <input type="text" id="email" name="email" value="">
+                </div>
+        </fieldset>
+        <fieldset>
+            <legend>Rellene las opciones siguientes</legend>
+            <div>
+                <input type="checkbox" id="win" name="sow"> <label for="">Windows</label>
+                <input type="checkbox" id="mac" name="som"> <label for="">Mac</label>
+                <input type="checkbox" id="lix" name="sol"> <label for="">Linux</label>
+            </div>
+            <h3>Selecciona el ciclo cursado</h3>
+            <br>
+            <select name="grado" id="grado" multiple>
+                <option value="grado1">SMIR</option>
+                <option value="grado2">ASIR</option>
+                <option value="grado3">DAM</option>
+                <option value="grado4">DAW</option>
+            </select>
+        </fieldset>
+        <input type="submit" value="Enviar Informacion" style='width:180px; height:20px'>
+    </form>
+    <script src="Formulario.js"></script>
+</body>
+</html>

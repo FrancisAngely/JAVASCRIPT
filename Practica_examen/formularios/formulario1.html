@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .tarea {
+        height: 100px;
+        width: 500px;
+        padding-left: 0;
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script src="formulario1.js"></script>
+
+    <h1>Formulario de Inscripción</h1>
+
+    <form action="formulario">
+      <fieldset>
+        <legend>Rellenar</legend>
+
+        <label for="genero">Género</label>
+        <select name="genero" id="genero" for="gen">
+          <option value="" id="gen_id">Seleccione</option>
+          <option value="Mujer" id="gen_id">Mujer</option>
+          <option value="hombre" id="gen_id">Hombre</option>
+          <option value="otro" id="gen_id">Otro</option>
+        </select>
+
+        <h2>Elige el lenguaje utilizado</h2>
+        <div id="radio-button">
+          <input type="radio" name="lenguaje" value="java" id="java" />
+          <label for="java">Java</label>
+          <input type="radio" name="lenguaje" value="python" id="python" />
+          <label for="java">Python</label>
+          <input type="radio" name="lenguaje" value="html" id="html" />
+          <label for="java">HTML</label>
+          <input type="radio" name="lenguaje" value="vb" id="vb" />
+          <label for="java">Visual Basic</label>
+          <input type="radio" name="lenguaje" value="css" id="css" />
+          <label for="java">CSS</label>
+        </div>
+
+        <br />
+        <br />
+        <div id="text-area">
+          <textarea name="texto" id="texto" class="tarea">
+Por favor, escriba aqui</textarea
+          >
+        </div>
+        <div id="personal-data">
+          <br />
+          <label for="info">Instituto</label>
+          <input type="text" id="info" name="insti" />
+          <br />
+          <label for="info">Nombre</label>
+          <input type="text" id="info" name="nombre" />
+          <br />
+          <label for="info">Apellidos</label>
+          <input type="text" id="info" name="apellido" />
+          <br />
+          <label for="info">E-mail</label>
+          <input type="text" id="info" name="email" />
+        </div>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>Rellene las opciones siguientes</legend>
+        <div id="so_options">
+          <input type="checkbox" id="windows" name="so" />
+          <label for="windows">Windows</label>
+          <input type="checkbox" id="mac" name="so" />
+          <label for="mac">Mac</label>
+          <input type="checkbox" id="linux" name="so" />
+          <label for="linux">Linux</label>
+        </div>
+        <div id="ciclos">
+          <h4>Selecciona el ciclo cursado</h4>
+          <select name="ciclos" id="ciclos" multiple>
+            <option value="" id="ciclos">SMIR</option>
+            <option value="" id="ciclos">ASIR</option>
+            <option value="" id="ciclos">DAM</option>
+            <option value="" id="ciclos">DAW</option>
+          </select>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

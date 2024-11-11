@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      table,
+      tr,
+      th {
+        border: 1px solid black;
+        height: 10px;
+        width: 400px;
+        margin-right: 90px;
+        margin-left: 90px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--
+    Realizar un programa en cuya página visualizaremos dos cuadros de texto
+(type=”text”) y un botón, cuando pulsemos el botón, se añadirá la información
+que haya en esos cuadros dentro de una tabla creada en html con dos columnas,
+en cada una de las columnas se añadirá la información de cada uno de los
+cuadros.   
+    -->
+    <label for="texto1">Producto 1</label>
+    <input type="text" id="texto1" />
+    <label for="texto2">Producto 2</label>
+    <input type="text" id="texto2" />
+    <button id="agregar">Agregar</button>
+
+    <br /><br /><br />
+
+    <table id="tabla">
+      <tr>
+        <th>Lista de producto 1</th>
+        <th>Lista de producto 2</th>
+      </tr>
+      <tbody></tbody>
+    </table>
+    <script>
+      document.getElementById("agregar").addEventListener("click", function () {
+        const producto1 = document.getElementById("texto1").value;
+        const producto2 = document.getElementById("texto2").value;
+
+        if (producto1.trim() === "" || producto2.trim() === "") {
+          alert("El campo no puede estar vacio");
+          return;
+        }
+        //tabla
+        const nuevafila = document.createElement("tr");
+        const celda1 = document.createElement("td");
+        celda1.textContent = producto1;
+        const celda2 = document.createElement("td");
+        celda2.textContent = producto2;
+
+        nuevafila.appendChild(celda1);
+        nuevafila.appendChild(celda2);
+
+        document.querySelector("#tabla tbody").appendChild(nuevafila);
+        document.getElementById("texto1").value = "";
+        document.getElementById("texto1").value = "";
+      });
+    </script>
+  </body>
+</html>

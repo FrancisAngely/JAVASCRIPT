@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=,, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+    Realizar una aplicación donde tendremos un select con cinco ítems sobre
+    información que vosotros elijáis (nombres, ciudades, países,…) y un cuadro de
+    texto, cuando seleccionéis una de las opciones del select añadiréis en el cuadro
+    de texto la información que hemos seleccionado en el select.
+    -->
+    <h4>Selecciona una opcion</h4>
+    <select name="name" id="name1">
+      <option value="">Seleccion</option>
+      <option>Carmen</option>
+      <option>Bruno</option>
+      <option>Jose</option>
+      <option>Francis</option>
+      <option>Eduardo</option>
+    </select>
+    <input type="text" name="texto" id="texto" />
+
+    <script>
+      var nombre = document.getElementById("name1");
+      var texto = document.getElementById("texto");
+
+      nombre.addEventListener("change", function () {
+        const valor = nombre.options[nombre.selectedIndex];
+        console.log(valor.textContent);
+        texto.value = valor.textContent;
+      });
+    </script>
+  </body>
+</html>

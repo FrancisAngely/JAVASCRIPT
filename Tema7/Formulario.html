@@ -1,119 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
 
-  <body>
-    <script src="formulario.js"></script>
-    <h1>Formulario Escolar</h1>
-    <form id="formularEscolar" action="formularioEscolar.html">
-      <fieldset>
-        <legend>Rellenar</legend>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
 
-        <label for="genero">Género</label>
-        <select name="genero" id="genero" for="gen">
-          <option value="">Selecciona</option>
-          <option value="hombre">Hombre</option>
-          <option value="mujer">Mujer</option>
-          <option value="otro">Otro</option>
-        </select>
+<body>
+  <script src="formulario.js"></script>
+  <h1>Formulario Escolar</h1>
+  <form id="formularEscolar" action="formulatioEscolar.html">
+    <fieldset>
+      <legend>Rellenar</legend>
 
-        <h2>Elige el lenguaje utilizado</h2>
-        <div id="radio_buttons">
-          <input
-            type="radio"
-            id="java"
-            name="lenguajes"
-            value="java"
-            disabled
-          />
-          <label for="java"><b>Java</b></label>
-          <input
-            type="radio"
-            id="python"
-            name="lenguajes"
-            value="python"
-            disabled
-          />
-          <label for="python"><b>python</b></label>
-          <input
-            type="radio"
-            id="html"
-            name="lenguajes"
-            value="html"
-            disabled
-          />
-          <label for="html"><b>HTML</b></label>
-          <input type="radio" id="vb" name="lenguajes" value="vb" disabled />
-          <label for="vb"><b>Visual Basic</b></label>
-          <input type="radio" id="css" name="lenguajes" value="css" disabled />
-          <label for="css"><b>CSS</b></label>
-          <br />
-        </div>
-        <br /><br />
-        <div id="text_area">
-          <textarea
-            name="texto"
-            id="texto"
-            rows="10"
-            cols="70"
-            placeholder="Por favor, escriba aqui"
-          ></textarea>
-        </div>
-        <br /><br />
-        <div>
-          <label for="insti">Instituto</label>
-          <input type="text" id="insti" name="insti" value="" />
-          <br />
-          <br />
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" value="" />
-          <br />
-          <br />
-          <label for="apellidos">Apellidos</label>
-          <input type="text" id="apellidos" name="apellidos" value="" />
-          <br />
-          <br />
-          <label for="email">E-mail</label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            value=""
-            autocomplete="email"
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Rellene las opciones siguientes</legend>
-        <div id="checkbox_so">
-          <input type="checkbox" id="win" name="so" value="win" />
-          <label for="win">Windows</label>
-          <input type="checkbox" id="mac" name="so" value="mac" />
-          <label for="mac">Mac</label>
-          <input type="checkbox" id="lix" name="so" value="lix" />
-          <label for="lix">Linux</label>
-        </div>
-        <h3>Selecciona el ciclo cursado</h3>
+      <label for="genero">Género</label>
+      <select name="genero" id="genero" for="gen">
+        <option value="">Selecciona</option>
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+        <option value="otro">Otro</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        Elige el lenguaje utilizado
+      </legend>
+      <div id="radio_buttons">
+        <input type="radio" id="java" name="lenguajes" value="java" disabled />
+        <label for="java"><b>Java</b></label>
+        <input type="radio" id="python" name="lenguajes" value="python" disabled />
+        <label for="python"><b>python</b></label>
+        <input type="radio" id="html" name="lenguajes" value="html" disabled />
+        <label for="html"><b>HTML</b></label>
+        <input type="radio" id="vb" name="lenguajes" value="vb" disabled />
+        <label for="vb"><b>Visual Basic</b></label>
+        <input type="radio" id="css" name="lenguajes" value="css" disabled />
+        <label for="css"><b>CSS</b></label>
         <br />
-        <div id="grado_select">
-          <select name="grado" id="grado" multiple disabled>
-            <option value="grado1">SMIR</option>
-            <option value="grado2">ASIR</option>
-            <option value="grado3">DAM</option>
-            <option value="grado4">DAW</option>
-          </select>
-        </div>
-      </fieldset>
-      <input
-        type="submit"
-        value="Enviar Informacion"
-        style="width: 180px; height: 20px"
-      />
-    </form>
-  </body>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div id="text_area">
+        <label for="texto">Comentarios:</label>
+        <textarea name="texto" id="texto" rows="10" cols="70" placeholder="Por favor, escriba aqui"></textarea>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div>
+        <label for="insti">Instituto</label>
+        <input type="text" id="insti" name="insti" value="" />
+        <br />
+        <br />
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" value="" />
+        <br />
+        <br />
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" value="" />
+        <br />
+        <br />
+        <label for="email">E-mail</label>
+        <input type="text" id="email" name="email" value="" autocomplete="email" />
+      </div>
+    </fieldset>
+    </fieldset>
+    <fieldset>
+      <legend>Rellene las opciones siguientes</legend>
+      <div id="checkbox_so">
+        <input type="checkbox" id="win" name="so" value="win" />
+        <label for="win">Windows</label>
+        <input type="checkbox" id="mac" name="so" value="mac" />
+        <label for="mac">Mac</label>
+        <input type="checkbox" id="lix" name="so" value="lix" />
+        <label for="lix">Linux</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Selecciona el ciclo cursado</legend>
+      <br />
+      <div id="grado_select">
+        <select name="grado" id="grado" multiple disabled>
+          <option value="grado1">SMIR</option>
+          <option value="grado2">ASIR</option>
+          <option value="grado3">DAM</option>
+          <option value="grado4">DAW</option>
+        </select>
+      </div>
+    </fieldset>
+    <input type="submit" value="Enviar Informacion" style="width: 180px; height: 20px" />
+  </form>
+</body>
+
 </html>

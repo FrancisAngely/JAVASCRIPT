@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     const genero = document.getElementById("genero");
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     }
     if (texto.value == "") {
+      texto.classList.add("error");
       message.push("No hay texto");
       mensaje_error("No hay texto", "text_area", "texto");
     }
@@ -96,13 +98,26 @@ document.addEventListener("DOMContentLoaded", function () {
   //Text area
   texto = document.getElementById("texto");
   texto.addEventListener("input", function (event) {
-    remove_mensajes_error("error_texto");
+    //remove_mensajes_error("error_texto");
+    texto.classList.remove("error_texto");
+    let value_length = event.target.value.length;
+    const MAX_CHARS = 10;
+    let maximo = max_length(value_length, MAX_CHARS);
+    if (!maximo) {
+      alert("Has alcanzado el número maximo de caracteres");
+      texto.value = texto.value.slice(0, 10);
+    }
   });
 
   // control nombre y apellido
   nombre = document.getElementById("nombre");
   nombre.addEventListener("input", function (event) {
     nombre.classList.remove("error");
+    let validoName = validate_charSpecial(nombre.value);
+    //console.log(valido);
+    if (!validoName) {
+      alert("Datos invalidos");
+    }
     let value_length = event.target.value.length;
     const MAX_CHARS = 10;
     let maximo = max_length(value_length, MAX_CHARS);
@@ -115,6 +130,12 @@ document.addEventListener("DOMContentLoaded", function () {
   apellidos = document.getElementById("apellidos");
   apellidos.addEventListener("input", function (event) {
     apellidos.classList.remove("error");
+    let validoApellido = validate_charSpecial1(apellidos.value);
+    //console.log(validoApellido);
+    if (!validoApellido) {
+      alert("Datos invalidos");
+    }
+
     let value_length = event.target.value.length;
     const MAX_CHARS = 10;
     let maximo = max_length(value_length, MAX_CHARS);
@@ -123,9 +144,15 @@ document.addEventListener("DOMContentLoaded", function () {
       apellidos.value = apellidos.value.slice(0, 10);
     }
   });
+
   instituto = document.getElementById("insti");
   instituto.addEventListener("input", function (event) {
     instituto.classList.remove("error");
+    let validoInsti = validate(instituto.value);
+    console.log(validoInsti);
+    if (!validoInsti) {
+      alert("Datos invalidos");
+    }
     let value_length = event.target.value.length;
     const MAX_CHARS = 10;
     let maximo = max_length(value_length, MAX_CHARS);
@@ -134,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
       instituto.value = instituto.value.slice(0, 10);
     }
   });
+
   email = document.getElementById("email");
   email.addEventListener("focusout", function (event) {
     email = event.target.value;
@@ -168,6 +196,18 @@ document.addEventListener("DOMContentLoaded", function () {
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
   }
+
+  function validate_charSpecial(nombre) {
+    return nombre.match(/^[a-zA-Z]*$/);
+  }
+
+  function validate_charSpecial1(apellidos) {
+    return apellidos.match(/^[a-zA-Z]*$/);
+  }
+  function validate(instituto) {
+    return instituto.match(/^[a-zA-Z\-]*$/);
+  }
+
   function max_length(value_length, max_length) {
     if (value_length < max_length) {
       return true;
@@ -181,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (checkbox.checked) {
         cont++;
       }
+      0;
     });
     if (cont > 0) {
       return true;

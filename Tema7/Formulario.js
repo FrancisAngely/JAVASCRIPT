@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert(texto);
     }
   });
+
   // control genero
   genero = document.getElementById("genero");
   genero.addEventListener("click", function () {
@@ -98,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
   //Text area
   texto = document.getElementById("texto");
   texto.addEventListener("input", function (event) {
-    //remove_mensajes_error("error_texto");
     texto.classList.remove("error_texto");
     let value_length = event.target.value.length;
     const MAX_CHARS = 10;
@@ -112,7 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // control nombre y apellido
   nombre = document.getElementById("nombre");
   nombre.addEventListener("input", function (event) {
-    nombre.classList.remove("error");
+    remove_mensajes_error("error_texto");
+
+  //nombre.classList.remove("error");
     let validoName = validate_charSpecial(nombre.value);
     //console.log(valido);
     if (!validoName) {
@@ -149,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
   instituto.addEventListener("input", function (event) {
     instituto.classList.remove("error");
     let validoInsti = validate(instituto.value);
-    console.log(validoInsti);
+   // console.log(validoInsti);
     if (!validoInsti) {
       alert("Datos invalidos");
     }
@@ -171,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   email.addEventListener("input", function (event) {
-    // email.classList.remove("error");
+    //email.classList.remove("error");
   });
 
   //Opciones Sistemas operativos

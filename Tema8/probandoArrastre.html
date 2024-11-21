@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+text-align: center;
+}
+
+.cerilla {
+width: 200px;
+display: block;
+margin: 0 auto;
+cursor: pointer;
+}
+
+.papelera {
+width: 200px;
+display: block;
+margin: 0 auto;
+cursor: pointer;
+}
+    </style>
+</head>
+
+<body>
+
+    <h1>Probando el arrastre</h1>
+    <img id="cerilla" class="cerilla" src="cerilla.jpg" draggable="true">
+    <h1>Vamos a quemar los papeles</h1>
+    <img id="papelera" class="papelera" src="papelera.jpg" alt="papelera">
+    <script>
+
+        const cerilla = document.getElementById("cerilla");
+        
+        const papelera = document.getElementById("papelera");
+
+
+        cerilla.addEventListener("click", () => {
+            cerilla.src = "cerillaEncendida.jpg";
+        });
+
+        cerilla.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData("image/jpeg", "cerilla");
+
+        });
+
+        papelera.addEventListener("dragover", (e) => {
+            e.preventDefault();
+        });
+
+        papelera.addEventListener("drop", (e) => {
+            papelera.src = "papelerafuego.jpg";
+            cerilla.src = "cerilla.jpg";
+        }); 
+    </script>
+
+</body>
+
+</html>

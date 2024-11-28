@@ -38,13 +38,21 @@ function drop(e) {
   this.classList.remove("over");
   const cardId = e.dataTransfer.getData("text/plain");
   const card = document.getElementById(cardId);
-  this.appendChild(card);
-  //actualizarBarra(); 
+
+  if (this.id === "favorites") {
+    this.appendChild(card);
+  } else {
+    document.getElementById("not-favorites").appendChild(card);
+  }
+
+  actualizarBarra();
 }
 
-/*function actualizarBarra() {
-  let celdasCorrectas = document.querySelectorAll(".card").length;
-  let celdasNum = document.querySelectorAll(".card").length;
-  let progreso = (celdasCorrectas / celdasNum) * 100;
+function actualizarBarra() {
+  const totalCards = document.querySelectorAll(".card").length;
+  const favoriteCards = document.querySelectorAll("#favorites .card").length;
+
+  let progreso = (favoriteCards / totalCards) * 100;
+
   barra.style.width = `${progreso}%`;
-}*/
+}

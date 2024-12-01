@@ -1,3 +1,5 @@
+let tareaEditando = null; // Variable para almacenar la tarea que se está editando
+
 const anadir = document.getElementById("anadir");
 const titulo = document.getElementById("titulo");
 const listaTareas = document.getElementById("listaTareas");
@@ -28,13 +30,28 @@ function ordenarPrioridad() {
 function agregarTareas() {
   const descripcion = document.getElementById("descripcion").value;
   const prioridad = document.getElementById("prioridad").value;
+
   if (titulo.value === "") {
     alert("El titulo de la tarea no puede estar vacio");
     return;
   }
 
-  const tarea = crearElementoTarea(titulo.value, descripcion, prioridad);
-  listaTareas.appendChild(tarea);
+  if (tareaEditando) {
+    // Si hay una tarea siendo editada, actualiza su contenido
+    tareaEditando.querySelector(".titulo strong").textContent = titulo.value;
+    tareaEditando.querySelector(".descripcion strong").textContent =
+      descripcion;
+    tareaEditando.className = prioridad; // Actualiza la prioridad
+    tareaEditando = null; // Resetea la tarea editando
+  } else {
+    // Si no hay tarea editando, crea una nueva
+    const tarea = crearElementoTarea(titulo.value, descripcion, prioridad);
+    listaTareas.appendChild(tarea);
+  }
+
+  // Limpia los campos de entrada
+  titulo.value = "";
+  document.getElementById("descripcion").value = "";
   ordenarPrioridad();
 }
 
@@ -75,6 +92,9 @@ function editarTarea(tarea) {
   const tituloElement = tarea.querySelector(".titulo strong");
   const descripcionElement = tarea.querySelector(".descripcion strong");
 
+  // Rellena los campos de entrada con el contenido de la tarea
   titulo.value = tituloElement.textContent;
-  descripcion.value = descripcionElement.textContent;
+  document.getElementById("descripcion").value = descripcionElement.textContent;
+
+  tareaEditando = tarea; // Guarda la tarea que se está editando
 }

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+    <style>
+      .input-invalido {
+        border: 2px solid red;
+      }
+
+      .input-valido {
+        border: 2px solid green;
+      }
+
+      .error-mensaje {
+        color: red;
+        font-size: 0.9em;
+        margin-top: 5px;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="formulario">
+      <fieldset>
+        <legend>Rellenar</legend>
+        <label for="genero">Género:</label>
+        <select name="genero" id="genero">
+          <option value=""></option>
+          <option value="hombre" id="genero-hombre">Hombre</option>
+          <option value="mujer" id="genero-mujer">Mujer</option>
+          <option value="otro" id="genero-otro">Otro</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>ELIGE EL LENGUAJE UTILIZADO</legend>
+        <label for="lenguaje-java">
+          <input type="radio" name="lenguaje" value="java" id="lenguaje-java" />
+          Java
+        </label>
+        <label for="lenguaje-python"
+          ><input
+            type="radio"
+            name="lenguaje"
+            value="python"
+            id="lenguaje-python"
+          />
+          Python</label
+        >
+        <label for="lenguaje-html"
+          ><input
+            type="radio"
+            name="lenguaje"
+            value="html"
+            id="lenguaje-html"
+          />
+          HTML</label
+        >
+        <label for="lenguaje-vb"
+          ><input
+            type="radio"
+            name="lenguaje"
+            value="visual_basic"
+            id="lenguaje-vb"
+          />
+          Visual Basic</label
+        >
+        <label for="lenguaje-css"
+          ><input type="radio" name="lenguaje" value="css" id="lenguaje-css" />
+          CSS</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <label for="comentarios">Comentarios:</label>
+        <textarea
+          name="comentarios"
+          id="comentarios"
+          rows="5"
+          cols="40"
+          placeholder="Por favor, escriba aquí"
+        ></textarea>
+      </fieldset>
+
+      <fieldset>
+        <label for="instituto">Instituto:</label>
+        <input type="text" name="instituto" id="instituto" /><br />
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" /><br />
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" name="apellidos" id="apellidos" /><br />
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Rellene las opciones siguientes</legend>
+        <label for="so-windows"
+          ><input
+            type="checkbox"
+            name="sistema_operativo"
+            value="windows"
+            id="so-windows"
+          />
+          Windows</label
+        >
+        <label for="so-mac"
+          ><input
+            type="checkbox"
+            name="sistema_operativo"
+            value="mac"
+            id="so-mac"
+          />
+          Mac</label
+        >
+        <label for="so-linux"
+          ><input
+            type="checkbox"
+            name="sistema_operativo"
+            value="linux"
+            id="so-linux"
+          />
+          Linux</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <legend>SELECCIONA EL CICLO CURSADO</legend>
+        <select name="ciclo" id="ciclo" size="4" multiple>
+          <option value="smir" id="ciclo-smir">SMIR</option>
+          <option value="asir" id="ciclo-asir">ASIR</option>
+          <option value="dam" id="ciclo-dam">DAM</option>
+          <option value="daw" id="ciclo-daw">DAW</option>
+        </select>
+      </fieldset>
+      <button type="submit" id="btn-enviar">Enviar información</button>
+    </form>
+    <script src="form.js"></script>
+  </body>
+</html>

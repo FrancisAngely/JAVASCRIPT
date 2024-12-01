@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //disable error message
       genero.classList.remove("error");
       remove_mensajes_error("error_lenguaje");
+
       // enabled radio lenguajes
       if (genero.value != "") {
         lenguejes = document.querySelectorAll("[name=lenguajes]");
@@ -114,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
   nombre.addEventListener("input", function (event) {
     remove_mensajes_error("error_texto");
 
-  //nombre.classList.remove("error");
+    //nombre.classList.remove("error");
     let validoName = validate_charSpecial(nombre.value);
     //console.log(valido);
     if (!validoName) {
@@ -151,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
   instituto.addEventListener("input", function (event) {
     instituto.classList.remove("error");
     let validoInsti = validate(instituto.value);
-   // console.log(validoInsti);
+    // console.log(validoInsti);
     if (!validoInsti) {
       alert("Datos invalidos");
     }

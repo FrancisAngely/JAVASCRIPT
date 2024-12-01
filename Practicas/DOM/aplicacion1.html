@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="aplicacion.css" />
+  </head>
+
+  <body>
+    <h1>Gestor de Tareas con Prioridades</h1>
+    <label for="titulo">Título de la Tarea:</label>
+    <input type="text" id="titulo" placeholder="Introduce el título" />
+
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" placeholder="Describe la tarea" />
+
+    <label for="prioridad">Prioridad:</label>
+    <select id="prioridad">
+      <option value="baja">Baja</option>
+      <option value="media">Media</option>
+      <option value="alta">Alta</option>
+    </select>
+
+    <button id="anadir">Añadir Tarea</button>
+    <button id="eliminarCompletadas">Eliminar Completadas</button>
+
+    <h3>Lista de Tareas</h3>
+    <ul id="listaTareas"></ul>
+
+    <script src="script1.js"></script>
+  </body>
+</html>

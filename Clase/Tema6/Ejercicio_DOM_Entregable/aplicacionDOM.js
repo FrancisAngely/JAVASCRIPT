@@ -3,7 +3,6 @@ const anadir = document.getElementById("anadir");
 const deleteCompletadas = document.getElementById("eliminarCompletadas");
 const titulo = document.getElementById("titulo");
 
-
 anadir.addEventListener("click", agregarTarea);
 deleteCompletadas.addEventListener("click", eliminarCompletadas);
 
@@ -84,72 +83,68 @@ function editarTarea(tarea) {
   const descripcionElement = tarea.querySelector(".descripcion");
 
   titulo.value = tituloElement.textContent;
-  descripcion.value=descripcionElement.textContent;
-  
-
+  descripcion.value = descripcionElement.textContent;
 }
 
 //Resolucion clase:
 
-/*
-const titulo = document.getElementById("titulo");
+/*const titulo = document.getElementById("titulo");
 const descripcion = document.getElementById("descripcion");
 const prioridad = document.getElementById("prioridades");
-const añadir = document.getElementById("añadir");
+const anadir = document.getElementById("añadir");
 const eliminar = document.getElementById("eliminar");
 const lista = document.getElementById("lista_tareas");
 
+anadir.addEventListener("click", function () {
+  if (titulo.value !== "") {
+    console.log("Todo ok");
+    const elemento = document.createElement("li");
+    elemento.textContent = `${titulo.value} - ${descripcion.value}`;
+    elemento.value = `${titulo.value} - ${descripcion.value}`;
 
-añadir.addEventListener("click", function(){
-if(titulo.value !== ""){
-console.log("Todo ok");
-const elemento = document.createElement("li");
-elemento.textContent = `${titulo.value} - ${descripcion.value}`;
-elemento.value = `${titulo.value} - ${descripcion.value}`;
+    const completar = document.createElement("button");
+    completar.textContent = "Completar";
+    completar.value = "Completar";
 
-const completar = document.createElement("button");
-completar.textContent = "Completar";
-completar.value = "Completar";
+    elemento.appendChild(completar);
 
-elemento.appendChild(completar);
+    if (prioridad.value === "baja") {
+      elemento.classList.add("baja");
+    } else if (prioridad.value === "media") {
+      elemento.classList.add("media");
+    } else {
+      elemento.classList.add("alta");
+    }
+    lista.appendChild(elemento);
 
-if(prioridad.value === "baja"){
-elemento.classList.add("baja");
-}else if(prioridad.value === "media"){
-elemento.classList.add("media");
-}else{
-elemento.classList.add("alta");
-}
-lista.appendChild(elemento);
+    completar.addEventListener("click", function () {
+      elemento.classList.add("completada");
 
-completar.addEventListener("click", function() {
-elemento.classList.add("completada");
+      //1 - forma;
+      if (elemento.classList.contains("completada")) {
+        elemento.remove();
+        lista.appendChild(elemento);
+      }
 
-//1-forma
-// if(elemento.classList.contains("completada")){
-// elemento.remove();
-// lista.appendChild(elemento);
-// }
+      //2-forma
+      /*if (elemento.classList.contains("completada")) {
+        elemento.remove();
+        lista.insertBefore(elemento, null);
+      }*/
 
-//2-forma
-/*if(elemento.classList.contains("completada")){
-elemento.remove();
-lista.insertBefore(elemento,null);
-} 
+/*3 - forma;
+      lista.insertAdjacentElement("beforeend", elemento);*/
 
-//3- forma
-//lista.insertAdjacentElement("beforeend", elemento);
+/*4 - forma;
+      const clonar = elemento.cloneNode(true);
+      elemento.remove();
+      lista.appendChild(clonar);*/
+/* });
+  } else {
+    alert("No has introducido el título");
+  }
+});*/
 
-//4- forma
-const clonar = elemento.cloneNode(true);
-elemento.remove();
-lista.appendChild(clonar);
-});
-}else{
-alert("No has introducido el título");
-}
-})
-*/
 /*function editarTarea(tarea) {
   const tituloElement = tarea.querySelector(".titulo strong");
   const descripcionElement = tarea.querySelector(".descripcion");

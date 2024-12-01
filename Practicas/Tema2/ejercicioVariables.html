@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Realizar una página web donde definiremos dos variables de tipo numérico y 
+    nos muestre en una ventana emergente su suma, su resta, su multiplicación y su cociente.
+     (Hacer comprobaciones en la división por 0, y qué pasa si dividimos dos enteros??)-->
+
+    <h1>Calculadora</h1>
+    <script>
+      valor1 = parseFloat(prompt("valor1"));
+      valor2 = parseFloat(prompt("valor2"));
+      boton = document.getElementById("aceptar");
+
+      let suma = valor1 + valor2;
+      console.log("La suma es: " + suma);
+      let resta = valor1 - valor2;
+      console.log("La resta es: " + resta);
+      let multiplicacion = valor1 * valor2;
+      console.log("La multiplicacion es: " + multiplicacion);
+      let division;
+      if (valor2 === 0) {
+        console.log("No se puede dividir");
+      } else {
+        division = valor1 / valor2;
+        console.log("La division es: " + division);
+      }
+    </script>
+  </body>
+</html>
+
+<!--
+document.getElementById('formulario').addEventListener('submit', function (event) {
+    event.preventDefault(); // Evitar el envío del formulario si hay errores.
+
+    let isValid = true;
+
+    // Obtener los campos
+    const instituto = document.getElementById('instituto');
+    const nombre = document.getElementById('nombre');
+    const apellidos = document.getElementById('apellidos');
+    const email = document.getElementById('email');
+    const comentarios = document.getElementById('comentarios');
+
+    // Limpiar mensajes de error anteriores
+    document.querySelectorAll('.error-mensaje').forEach(el => el.remove());
+
+    // Validar Instituto
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s\-]+$/.test(instituto.value)) {
+        mostrarError(instituto, 'El instituto solo debe contener letras y guiones.');
+        isValid = false;
+    } else {
+        marcarValido(instituto);
+    }
+
+    // Validar Nombre
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre.value)) {
+        mostrarError(nombre, 'El nombre solo debe contener letras.');
+        isValid = false;
+    } else {
+        marcarValido(nombre);
+    }
+
+    // Validar Apellidos
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(apellidos.value)) {
+        mostrarError(apellidos, 'Los apellidos solo deben contener letras.');
+        isValid = false;
+    } else {
+        marcarValido(apellidos);
+    }
+
+    // Validar Email
+    if (!/^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value)) {
+        mostrarError(email, 'El email debe tener un formato válido.');
+        isValid = false;
+    } else {
+        marcarValido(email);
+    }
+
+    // Validar Comentarios
+    if (comentarios.value.trim().length < 10) {
+        mostrarError(comentarios, 'El campo comentarios debe tener al menos 10 caracteres.');
+        isValid = false;
+    } else {
+        marcarValido(comentarios);
+    }
+
+    // Si todo es válido, mostrar alerta de éxito
+    if (isValid) {
+        alert('El formulario se ha enviado correctamente.');
+        this.reset(); // Reiniciar el formulario
+    }
+});
+
+function mostrarError(campo, mensaje) {
+    campo.classList.add('input-invalido');
+    campo.classList.remove('input-valido');
+
+    const mensajeError = document.createElement('span');
+    mensajeError.classList.add('error-mensaje');
+    mensajeError.textContent = mensaje;
+    campo.parentElement.appendChild(mensajeError);
+}
+
+function marcarValido(campo) {
+    campo.classList.remove('input-invalido');
+    campo.classList.add('input-valido');
+}
+
+
+
+
+
+
+
+-->

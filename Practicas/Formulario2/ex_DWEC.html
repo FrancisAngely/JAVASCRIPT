@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centro de Formación - Gestión</title>
+    <link rel="stylesheet" href="styless.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Gestión de centro FP</h1>
+    </header>
+
+    <div class="grid-container">
+      <!-- Ejercicio 1 - formulario estudiantes -->
+      <section class="form-section">
+        <h2>Añadir Estudiante</h2>
+        <form id="estudiante-form">
+          <label for="estudiante-nombre">Nombre:</label>
+          <input
+            type="text"
+            id="estudiante-nombre"
+            placeholder="Nombre del estudiante"
+            class="estudiante"
+            required
+          />
+          <label for="estudiante-apellido">Apellido:</label>
+          <input
+            type="text"
+            id="estudiante-apellido"
+            placeholder="Apellido del estudiante"
+            class="estudiante"
+            required
+          />
+          <label for="estudiante-edad">Edad:</label>
+          <input
+            type="number"
+            id="estudiante-edad"
+            placeholder="Edad"
+            class="estudiante"
+            min="1"
+            required
+          />
+          <label for="estudiante-curso">Curso:</label>
+          <select id="©©" class="estudiante">
+            <option value="">Selecciona un ciclo</option>
+            <option value="daw">Desarrollo de aplicaciones web</option>
+            <option value="dam">
+              Desarrollo de aplicaciones multiplataforma
+            </option>
+          </select>
+          <button type="button" id="estudiante-añadir">
+            Añadir Estudiante
+          </button>
+        </form>
+      </section>
+
+      <section class="list-section">
+        <h2>Lista de Estudiantes</h2>
+        <ul id="estudiante-lista"></ul>
+      </section>
+
+      <!-- Ejercicio 2 - formulario asignaturas -->
+      <section class="form-section">
+        <h2>Añadir Asignatura</h2>
+        <form id="asignatura-form">
+          <label for="asignatura-nombre">Nombre de la Asignatura:</label>
+          <input
+            type="text"
+            id="asignatura-nombre"
+            placeholder="Nombre de la asignatura"
+            required
+          />
+          <label for="asignatura-curso">Ciclo:</label>
+          <select id="asignatura-curso">
+            <option value="">Selecciona un ciclo</option>
+            <option value="daw">Desarrollo de aplicaciones web</option>
+            <option value="dam">
+              Desarrollo de aplicaciones multiplataforma
+            </option>
+          </select>
+          <button type="button" id="asignatura-añadir">
+            Añadir Asignatura
+          </button>
+        </form>
+      </section>
+
+      <section class="list-section">
+        <h2>Lista de Asignaturas</h2>
+        <ul id="asignatura-lista"></ul>
+      </section>
+
+      <!-- Ejercicio 3 - formulario asignatura -->
+      <section class="form-section">
+        <h2>Añadir Docente</h2>
+        <form id="docente-form">
+          <label for="docente-nombre">Nombre:</label>
+          <input
+            type="text"
+            id="docente-nombre"
+            placeholder="Nombre del docente"
+            required
+          />
+          <label for="docente-apellido">Apellido:</label>
+          <input
+            type="text"
+            id="docente-apellido"
+            placeholder="Apellido del docente"
+            required
+          />
+          <label for="docente-asignatura">Asignatura:</label>
+          <select id="docente-asignatura">
+            <option value="">Selecciona una asignatura</option>
+          </select>
+          <button type="button" id="docente-añadir">Añadir Docente</button>
+        </form>
+      </section>
+
+      <section class="list-section">
+        <h2>Lista de Docentes</h2>
+        <ul id="docente-lista"></ul>
+      </section>
+
+      <!-- Ejercicio 4 - formulario matriculación -->
+      <section class="form-section">
+        <h2>Matricular Estudiante en Asignatura</h2>
+        <form id="matricula-form">
+          <label for="matricula-estudiante">Estudiante:</label>
+          <select id="matricula-estudiante">
+            <option value="">Selecciona un estudiante</option>
+          </select>
+          <label for="matricula-asignatura">Asignatura:</label>
+          <select id="matricula-asignatura">
+            <option value="">Selecciona una asignatura</option>
+          </select>
+          <button type="button" id="matricula-añadir">
+            Matricular Estudiante
+          </button>
+        </form>
+      </section>
+
+      <section class="list-section">
+        <h2>Lista de Matriculaciones</h2>
+        <ul id="matricula-lista"></ul>
+      </section>
+    </div>
+    <script src="form2.js"></script>
+  </body>
+</html>

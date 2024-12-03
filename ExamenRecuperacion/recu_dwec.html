@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="estilo_recu.css">
+</head>
+
+<body>
+    <h1>Gestión de Tareas</h1>
+
+    <!-- Sección 1: Gestión de Categorías -->
+    <section class="seccion">
+        <div class="contenedor-principal">
+            <h2>Nueva categoría</h2>
+            <div class="formulario">
+                <form id="formulario-categoria">
+
+                    <div class="grupo-formulario">
+                        <label for="descripcion-categoria">Nueva Categoría:</label>
+                        <input type="text" id="descripcion-categoria" placeholder="Escribe el nombre de la categoría">
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="color-categoria">Color de la Categoría:</label>
+                        <select id="color-categoria">
+                            <option value="">Selecciona un color</option>
+                            <option value="amarillo-categoria">Amarillo</option>
+                            <option value="verde-categoria">Verde</option>
+                            <option value="rojo-categoria">Rojo</option>
+                            <option value="rosa-categoria">Rosa</option>
+                            <option value="azul-categoria">Azul</option>
+                        </select>
+                    </div>
+                    <div class="mensaje-error" id="error-categoria"></div>
+                    <div class="grupo-formulario">
+                        <button type="submit" id="boton-categoria">Crear Categoría</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Leyenda de categorías -->
+            <div class="contenedor-leyenda">
+                <div class="rectangulos-leyenda">
+                    <div id="amarillo-categoria" class="leyenda-item" style="background-color: #fff9c4;">Amarillo</div>
+                    <div id="verde-categoria" class="leyenda-item" style="background-color: #c8e6c9;">Verde</div>
+                    <div id="rojo-categoria" class="leyenda-item" style="background-color: #ffcdd2;">Rojo</div>
+                    <div id="rosa-categoria" class="leyenda-item" style="background-color: #f8bbd0;">Rosa</div>
+                    <div id="azul-categoria" class="leyenda-item" style="background-color: #bbdefb;">Azul</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 2: Añadir Tareas -->
+    <section class="seccion">
+        <div class="contenedor-principal">
+            <h2>Nueva tarea</h2>
+            <div class="formulario">
+                <form id="formulario-tarea">
+                    <div class="grupo-formulario">
+                        <label for="titulo-tarea">Título de la Tarea:</label>
+                        <input type="text" id="titulo-tarea" placeholder="Escribe el título">
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="descripcion-tarea">Descripción:</label>
+                        <input type="text" id="descripcion-tarea" placeholder="Describe la tarea">
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="prioridad-tarea">Prioridad:</label>
+                        <select id="prioridad-tarea">
+                            <option value="Alta">Alta</option>
+                            <option value="Media">Media</option>
+                            <option value="Baja">Baja</option>
+                        </select>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="categoria-tarea">Categoría:</label>
+                        <select id="categoria-tarea">
+                            <option value="">Selecciona una categoría</option>
+                        </select>
+                    </div>
+                    <div class="mensaje-error" id="error-tarea"></div>
+                    <div class="grupo-formulario">
+                        <button type="submit" id="boton-tarea">Añadir Tarea</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 3: Mostrar Tareas -->
+    <section class="seccion">
+        <div class="contenedor-tareas">
+            <div class="columna-tareas" id="tareas-pendientes">
+                <h2>Por Hacer</h2>
+                <div class="contador-tareas" id="contador-pendientes">Tareas: 0</div>
+                <button id="botonOrdenar" class="boton-ordenar">Ordenar por Prioridad</button>
+                <div id="lista-pendientes" class="lista-tareas"></div>
+            </div>
+            <div class="columna-tareas" id="tareas-espera">
+                <h2>En Espera</h2>
+                <div class="contador-tareas" id="contador-espera">Tareas: 0</div>
+                <div id="lista-espera" class="lista-tareas"></div>
+            </div>
+            <div class="columna-tareas" id="tareas-completadas">
+                <h2>Completadas</h2>
+                <div class="contador-tareas" id="contador-completadas">Tareas: 0</div>
+                <div id="lista-completadas" class="lista-tareas"></div>
+            </div>
+        </div>
+    </section>
+    <script src="recu.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
